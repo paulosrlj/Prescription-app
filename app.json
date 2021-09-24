@@ -1,0 +1,12 @@
+{
+  "name": "prescription",
+  "displayName": "prescription",
+  "expo": {
+    "name": "prescription",
+    "slug": "prescription",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
