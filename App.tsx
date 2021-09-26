@@ -1,11 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import {
+  useFonts,
+  Quicksand_400Regular,
+  Quicksand_700Bold,
+} from '@expo-google-fonts/quicksand';
+import AppLoading from 'expo-app-loading';
+import theme from './src/global/styles/theme';
+
+import HomePaciente from './src/screens/HomePaciente';
 
 export default function App(): JSX.Element {
+  const [fontLoaded] = useFonts({
+    Quicksand_400Regular,
+    Quicksand_700Bold,
+  });
+
+  if (!fontLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <ThemeProvider theme={theme}>
+      <HomePaciente />
+    </ThemeProvider>
   );
 }
 
