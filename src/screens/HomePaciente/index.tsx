@@ -1,5 +1,6 @@
 import React from 'react';
 import RecipeCard, { RecipeCardProps } from '../../components/RecipeCard';
+import RecipeModal from '../../components/RecipeModal';
 
 import {
   Container,
@@ -72,6 +73,8 @@ export default function HomePaciente(): JSX.Element {
         keyExtractor={item => item.id}
         renderItem={({ item }) => <RecipeCard data={item} />}
       />
+
+      <RecipeModal />
     </Container>
   );
 }
