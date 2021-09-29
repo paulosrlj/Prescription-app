@@ -8,7 +8,7 @@ import { Data } from '../../screens/HomePaciente';
 
 export default function RecipeCard({ data }: Data): JSX.Element {
   const { isActive, setIsActive } = useContext(Context);
-  const { recipeProps, setRecipeProps } = useContext(Context);
+  const { setRecipeProps } = useContext(Context);
 
   function toggleModal() {
     setIsActive(!isActive);
