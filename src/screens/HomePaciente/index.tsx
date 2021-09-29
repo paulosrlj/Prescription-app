@@ -1,9 +1,7 @@
-import React, { useState, useContext } from 'react';
-import { Props, MedicineProps } from '../../components/MedicineItem';
+import React from 'react';
+import { MedicineProps } from '../../components/MedicineItem';
 import RecipeCard from '../../components/RecipeCard';
 import RecipeModal from '../../components/RecipeModal';
-
-import { Context } from '../../context/Modal';
 
 import {
   Container,
