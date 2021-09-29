@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Container, Title, Icon, Vality, TextContainer } from './styles';
 
-export interface RecipeCardProps {
-  title: string;
-  vality: string;
-}
+import { Context } from '../../context/Modal';
 
-interface Props {
-  data: RecipeCardProps;
-}
+import { Data } from '../../screens/HomePaciente';
 
-export default function RecipeCard({ data }: Props): JSX.Element {
+export default function RecipeCard({ data }: Data): JSX.Element {
+  const { isActive, setIsActive } = useContext(Context);
+  const { recipeProps, setRecipeProps } = useContext(Context);
+
+  function toggleModal() {
+    setIsActive(!isActive);
+    setRecipeProps(data);
+  }
+
   return (
-    <Container>
-      <Icon name="text-document" />
-      <TextContainer>
-        <Title>{data.title}</Title>
-        <Vality>Valido até: {data.vality}</Vality>
-      </TextContainer>
+    <Container
+      underlayColor="rgba(214, 210, 210, 0.4)"
+      onPress={() => toggleModal()}
+    >
+      <>
+        <Icon name="text-document" />
+        <TextContainer>
+          <Title>{data.illnessName}</Title>
+          <Vality>Valido até: {data.vality}</Vality>
+        </TextContainer>
+      </>
     </Container>
   );
 }

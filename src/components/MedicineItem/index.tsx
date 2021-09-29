@@ -8,23 +8,35 @@ import {
   TextBox,
 } from './style';
 
-export default function MedicineItem(): JSX.Element {
+export interface MedicineProps {
+  id: string;
+  medicineName: string;
+  dosage: string;
+  createdDate: string;
+  vality: string;
+}
+
+export interface Props {
+  data: MedicineProps;
+}
+
+export default function MedicineItem({ data }: Props): JSX.Element {
   return (
     <MedicineBox>
-      <MedicineName>Metamizol</MedicineName>
+      <MedicineName>{data.medicineName}</MedicineName>
       <TextBox>
         <Label>Dosagem:</Label>
-        <MedicineText>Tomar 20 got de 8/8 horas</MedicineText>
+        <MedicineText>{data.dosage}</MedicineText>
       </TextBox>
 
       <TextBox>
         <Label>Criada em:</Label>
-        <MedicineText>04/07/2020 - 19:05:20</MedicineText>
+        <MedicineText>{data.createdDate}</MedicineText>
       </TextBox>
 
       <TextBox>
         <Label>Valido até:</Label>
-        <MedicineText>01/05/2022</MedicineText>
+        <MedicineText>{data.vality}</MedicineText>
       </TextBox>
     </MedicineBox>
   );

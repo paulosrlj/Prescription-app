@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { RFValue } from 'react-native-responsive-fontsize';
-import { Modal, Alert, View, Pressable } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native';
+import { MedicineProps } from '../MedicineItem';
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -24,7 +24,7 @@ export const ModalBox = styled.View`
 
 export const Icon = styled(MaterialCommunityIcons)`
   color: ${({ theme }) => theme.colors.text_black};
-  font-size: ${RFValue(50)}px;
+  font-size: ${RFValue(35)}px;
 
   align-self: flex-end;
 `;
@@ -53,4 +53,6 @@ export const PatientName = styled(ResponsibleDoctor)`
   margin-bottom: 20px;
 `;
 
-export const MedicineList = styled(FlatList)``;
+export const MedicineList = styled(
+  FlatList as new () => FlatList<MedicineProps>,
+)``;

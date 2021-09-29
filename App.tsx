@@ -10,6 +10,9 @@ import theme from './src/global/styles/theme';
 
 import HomePaciente from './src/screens/HomePaciente';
 
+// Contexts
+import { IsModalActiveProvider } from './src/context/Modal';
+
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
     Quicksand_400Regular,
@@ -21,8 +24,10 @@ export default function App(): JSX.Element {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <HomePaciente />
-    </ThemeProvider>
+    <IsModalActiveProvider>
+      <ThemeProvider theme={theme}>
+        <HomePaciente />
+      </ThemeProvider>
+    </IsModalActiveProvider>
   );
 }
