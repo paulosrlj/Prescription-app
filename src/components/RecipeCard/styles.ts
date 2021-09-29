@@ -3,7 +3,7 @@ import { Entypo } from '@expo/vector-icons';
 
 import { RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View`
+export const Container = styled.TouchableHighlight`
   height: 62px;
   width: 100%;
 

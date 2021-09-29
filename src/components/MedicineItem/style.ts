@@ -1,9 +1,4 @@
 import styled from 'styled-components/native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import { RFValue } from 'react-native-responsive-fontsize';
-import { Modal, Alert, View, Pressable } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
 
 export const MedicineBox = styled.View`
   width: 100%;

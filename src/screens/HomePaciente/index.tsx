@@ -1,6 +1,9 @@
-import React from 'react';
-import RecipeCard, { RecipeCardProps } from '../../components/RecipeCard';
+import React, { useState, useContext } from 'react';
+import { Props, MedicineProps } from '../../components/MedicineItem';
+import RecipeCard from '../../components/RecipeCard';
 import RecipeModal from '../../components/RecipeModal';
+
+import { Context } from '../../context/Modal';
 
 import {
   Container,
@@ -15,41 +18,71 @@ import {
   RecipeList,
 } from './styles';
 
-export interface DataListProps extends RecipeCardProps {
+export interface DataListProps {
   id: string;
+  illnessName: string;
+  responsibleDoctor: string;
+  vality: string;
+  medicineList: MedicineProps[];
+}
+
+export interface Data {
+  data: DataListProps;
 }
 
 export default function HomePaciente(): JSX.Element {
   const data: DataListProps[] = [
     {
       id: '1',
-      title: 'Asma',
-      vality: '01/05/2023',
+      illnessName: 'Gastrite',
+      responsibleDoctor: 'Julia Mesquita',
+      vality: '10/05/2022',
+      medicineList: [
+        {
+          id: '102030',
+          medicineName: 'Sorrizal',
+          dosage: '1/2 comprimido a cada 6 horas',
+          createdDate: '04/07/2020 - 19:05:33',
+          vality: '01/05/2022',
+        },
+      ],
     },
     {
       id: '2',
-      title: 'Sinusite',
-      vality: '02/06/2022',
+      illnessName: 'Acne',
+      responsibleDoctor: 'Paulo Sérgio',
+      vality: '11/08/2023',
+      medicineList: [
+        {
+          id: '295120',
+          medicineName: 'Roacutam',
+          dosage: '1 comprimido após o almoço',
+          createdDate: '04/07/2020 - 19:05:33',
+          vality: '01/05/2023',
+        },
+        {
+          id: '217519',
+          medicineName: 'Remédio aleatório pra alergia',
+          dosage: '1 comprimido a cada 12 horas',
+          createdDate: '04/07/2020 - 19:05:33',
+          vality: '01/05/2023',
+        },
+      ],
     },
     {
       id: '3',
-      title: 'Acne',
-      vality: '10/03/2025',
-    },
-    {
-      id: '4',
-      title: 'Acne',
-      vality: '10/03/2025',
-    },
-    {
-      id: '5',
-      title: 'Acne',
-      vality: '10/03/2025',
-    },
-    {
-      id: '6',
-      title: 'Acne',
-      vality: '10/03/2025',
+      illnessName: 'Bronquite',
+      responsibleDoctor: 'João Sérgio',
+      vality: '10/05/2024',
+      medicineList: [
+        {
+          id: '2852195',
+          medicineName: 'Bombinha',
+          dosage: 'Tomar 20got de 8/8 horas',
+          createdDate: '04/07/2020 - 19:05:33',
+          vality: '01/05/2023',
+        },
+      ],
     },
   ];
 
