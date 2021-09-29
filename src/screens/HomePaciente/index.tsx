@@ -3,18 +3,7 @@ import { MedicineProps } from '../../components/MedicineItem';
 import RecipeCard from '../../components/RecipeCard';
 import RecipeModal from '../../components/RecipeModal';
 
-import {
-  Container,
-  Header,
-  Logo,
-  Icon,
-  LogoText,
-  PatientCard,
-  PatientCardCpf,
-  PatientCardName,
-  RecipeTitle,
-  RecipeList,
-} from './styles';
+import { Container, RecipeTitle, RecipeList } from './styles';
 
 export interface DataListProps {
   id: string;
@@ -86,17 +75,6 @@ export default function HomePaciente(): JSX.Element {
 
   return (
     <Container>
-      <Header>
-        <PatientCard>
-          <PatientCardName>Paulo Sérgio Rodrigues Leite Junior</PatientCardName>
-          <PatientCardCpf>111.111.111-00</PatientCardCpf>
-          <Logo>
-            <Icon name="pill" />
-            <LogoText>PRESCRIPTION</LogoText>
-          </Logo>
-        </PatientCard>
-      </Header>
-
       <RecipeTitle>Suas receitas</RecipeTitle>
 
       <RecipeList
