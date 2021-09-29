@@ -8,7 +8,8 @@ import {
 import AppLoading from 'expo-app-loading';
 import theme from './src/global/styles/theme';
 
-import HomePaciente from './src/screens/HomePaciente';
+// import HomePaciente from './src/screens/HomePaciente';
+import Settings from './src/screens/Settings';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
@@ -26,7 +27,7 @@ export default function App(): JSX.Element {
   return (
     <IsModalActiveProvider>
       <ThemeProvider theme={theme}>
-        <HomePaciente />
+        <Settings />
       </ThemeProvider>
     </IsModalActiveProvider>
   );
