@@ -16,7 +16,8 @@ import HomePaciente from './src/screens/HomePaciente';
 import Settings from './src/screens/Settings';
 import Login from './src/screens/Login';
 
-import AppRoutes from './src/routes/app.routes';
+// Routes
+import NavBar from './src/routes/BottomNavBar.routes';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
@@ -28,15 +29,13 @@ export default function App(): JSX.Element {
     Quicksand_700Bold,
   });
 
-  if (!fontLoaded) {
-    return <AppLoading />;
-  }
+  if (!fontLoaded) return <AppLoading />;
 
   return (
     <IsModalActiveProvider>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <AppRoutes />
+          <NavBar />
           {/* <Login /> */}
           {/* <Settings /> */}
         </NavigationContainer>
