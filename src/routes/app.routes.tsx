@@ -5,6 +5,7 @@ import { useTheme } from 'styled-components';
 import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 import Settings from '../screens/Settings';
 import HomePaciente from '../screens/HomePaciente';
+import Medicamentos from '../screens/Medicamentos';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -31,8 +32,8 @@ export default function AppRoutes(): JSX.Element {
       />
 
       <Screen
-        name="SearchMedicine"
-        component={HomePaciente} // TODO -> trocar quando a tela tiver pronta
+        name="Medicamentos"
+        component={Medicamentos} // TODO -> trocar quando a tela tiver pronta
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="pill" size={size} color={color} />
