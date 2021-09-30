@@ -56,7 +56,7 @@ export default function Settings(): JSX.Element {
       <CopyIdButton>
         <ButtonText>Copiar id</ButtonText>
       </CopyIdButton>
-      <LogoutButton>
+      <LogoutButton onPress={() => null}>
         <ButtonText>Logout</ButtonText>
       </LogoutButton>
     </Container>
