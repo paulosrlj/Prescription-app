@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import React from 'react';
 import { ThemeProvider } from 'styled-components/native';
 import {
@@ -7,11 +9,14 @@ import {
   Quicksand_700Bold,
 } from '@expo-google-fonts/quicksand';
 import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
 import theme from './src/global/styles/theme';
 
 import HomePaciente from './src/screens/HomePaciente';
 import Settings from './src/screens/Settings';
 import Login from './src/screens/Login';
+
+import AppRoutes from './src/routes/app.routes';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
@@ -30,8 +35,11 @@ export default function App(): JSX.Element {
   return (
     <IsModalActiveProvider>
       <ThemeProvider theme={theme}>
-        <Login />
-        {/* <Settings /> */}
+        <NavigationContainer>
+          <AppRoutes />
+          {/* <Login /> */}
+          {/* <Settings /> */}
+        </NavigationContainer>
       </ThemeProvider>
     </IsModalActiveProvider>
   );
