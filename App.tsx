@@ -9,7 +9,7 @@ import {
 import AppLoading from 'expo-app-loading';
 import theme from './src/global/styles/theme';
 
-// import HomePaciente from './src/screens/HomePaciente';
+import HomePaciente from './src/screens/HomePaciente';
 import Settings from './src/screens/Settings';
 import Login from './src/screens/Login';
 
