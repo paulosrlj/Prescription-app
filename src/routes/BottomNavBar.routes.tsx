@@ -8,7 +8,7 @@ import HomePaciente from '../screens/HomePaciente';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-export default function AppRoutes(): JSX.Element {
+export default function BottomNavBar(): JSX.Element {
   const theme = useTheme();
 
   return (
@@ -32,7 +32,7 @@ export default function AppRoutes(): JSX.Element {
 
       <Screen
         name="SearchMedicine"
-        component={HomePaciente} // TODO -> trocar quando a tela tiver pronta
+        component={Settings} // TODO -> trocar quando a tela tiver pronta
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="pill" size={size} color={color} />
@@ -42,7 +42,7 @@ export default function AppRoutes(): JSX.Element {
 
       <Screen
         name="SearchDrugstores"
-        component={HomePaciente}
+        component={Settings}
         options={{
           tabBarIcon: ({ size, color }) => (
             <SimpleLineIcons name="location-pin" size={size} color={color} />
