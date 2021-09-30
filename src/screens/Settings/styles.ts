@@ -29,10 +29,8 @@ export const Header = styled.SafeAreaView`
 export const PatientCard = styled.View`
   width: ${RFPercentage(52)}px;
   height: 100%;
-  margin: ${Platform.OS === 'android'
-      ? (StatusBar.currentHeight || 0) + 30
-      : 0}px
-    auto 0;
+  margin: ${Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0}px auto
+    0;
 
   border-radius: 5px;
 
@@ -62,7 +60,7 @@ export const Logo = styled.View`
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  margin-top: 45px;
+  margin-top: 65px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
