@@ -1,36 +1,19 @@
-import React, { useState } from 'react';
-
+import React from 'react';
+import Logo from '../../components/Logo/index';
+import SignForm from '../../components/SignForm';
 import {
-  Button,
-  ButtonText,
   Container,
   ContentView,
-  Icon,
-  Input,
-  InputContainer,
-  InputIcon,
   Link,
-  Logo,
-  LogoText,
-  LogoView,
   LightParagraph,
   Paragraph,
-  SignForm,
   Title,
 } from './styles';
 
 export default function Login(): JSX.Element {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   return (
     <Container>
-      <LogoView>
-        <Logo>
-          <Icon name="pill" />
-          <LogoText>PRESCRIPTION</LogoText>
-        </Logo>
-      </LogoView>
+      <Logo />
 
       <ContentView>
         <Title>Bem vindo !</Title>
@@ -46,19 +29,7 @@ export default function Login(): JSX.Element {
         <Paragraph>O prescription vai resolver isso para você</Paragraph>
       </ContentView>
 
-      <SignForm>
-        <InputContainer>
-          <InputIcon name="user-alt" size={14} color="black" />
-          <Input placeholder="Email" />
-        </InputContainer>
-        <InputContainer>
-          <InputIcon name="key" size={14} color="black" />
-          <Input placeholder="Senha" />
-        </InputContainer>
-        <Button onPress={() => {}}>
-          <ButtonText>Logar</ButtonText>
-        </Button>
-      </SignForm>
+      <SignForm />
 
       <Paragraph>
         Não tem uma conta? <Link>Cadatre-se</Link>

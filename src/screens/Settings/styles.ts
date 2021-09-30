@@ -29,8 +29,10 @@ export const Header = styled.SafeAreaView`
 export const PatientCard = styled.View`
   width: ${RFPercentage(52)}px;
   height: 100%;
-  margin: ${Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0}px auto
-    0;
+  margin: ${Platform.OS === 'android'
+      ? (StatusBar.currentHeight || 0) + 30
+      : 0}px
+    auto 0;
 
   border-radius: 5px;
 
@@ -60,7 +62,7 @@ export const Logo = styled.View`
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  margin-top: 65px;
+  margin-top: 45px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
@@ -121,12 +123,12 @@ export const CopyIdButton = styled.Pressable`
 
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.text};
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.medium};
   font-size: 14px;
 `;
 
 export const ButtonText = styled(Text)`
-  font-size: 14px;
+  font-size: ${RFValue(17)}px;
   text-align: center;
 `;
 
