@@ -3,12 +3,10 @@ import React from 'react';
 import AuthenticatedRoutes from './authenticated.routes';
 import UnauthenticatedRoutes from './unauthenticated.routes';
 
-const isAuthenticated = () => true;
+import { useAuthContext } from '../context/Authentication/AuthProvider';
 
 export default function AppRoutes(): JSX.Element {
-  return isAuthenticated() ? (
-    <AuthenticatedRoutes />
-  ) : (
-    <UnauthenticatedRoutes />
-  );
+  const { isLogado } = useAuthContext();
+
+  return isLogado ? <AuthenticatedRoutes /> : <UnauthenticatedRoutes />;
 }

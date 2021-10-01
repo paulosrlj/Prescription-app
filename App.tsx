@@ -17,6 +17,7 @@ import AppRoutes from './src/routes/app.routes';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
+import { AuthProvider } from './src/context/Authentication/AuthProvider';
 
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
@@ -28,14 +29,14 @@ export default function App(): JSX.Element {
   if (!fontLoaded) return <AppLoading />;
 
   return (
-    <IsModalActiveProvider>
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <AppRoutes />
-          {/* <Login /> */}
-          {/* <Settings /> */}
-        </NavigationContainer>
-      </ThemeProvider>
-    </IsModalActiveProvider>
+    <AuthProvider>
+      <IsModalActiveProvider>
+        <ThemeProvider theme={theme}>
+          <NavigationContainer>
+            <AppRoutes />
+          </NavigationContainer>
+        </ThemeProvider>
+      </IsModalActiveProvider>
+    </AuthProvider>
   );
 }

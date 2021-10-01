@@ -1,4 +1,4 @@
-#Thu Sep 30 11:54:43 BRT 2021
+#Fri Oct 01 15:25:10 BRT 2021
 path.4=classes_1.dex
 path.3=classes_0.dex
 path.2=classes2.dex
@@ -7,11 +7,13 @@ path.8=classes_13.dex
 path.7=classes_12.dex
 path.6=classes_11.dex
 path.5=classes_10.dex
+renamed.32=classes33.dex
 renamed.31=classes32.dex
 renamed.30=classes31.dex
 path.0=classes.dex
 path.30=classes_9.dex
 path.31=classes_28.dex
+path.32=classes_29.dex
 path.9=classes_14.dex
 renamed.29=classes30.dex
 renamed.28=classes29.dex
@@ -85,6 +87,7 @@ base.25=/home/paulo/Documentos/react-native-projects/prescription/android/app/bu
 base.29=/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_8.dex
 base.31=/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_28.dex
 base.30=/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_9.dex
+base.32=/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/dex/debug/mergeLibDexDebug/classes_29.dex
 renamed.9=classes10.dex
 renamed.8=classes9.dex
 renamed.3=classes4.dex
