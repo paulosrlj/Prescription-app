@@ -3,6 +3,7 @@ import { MedicineProps } from '../../components/MedicineItem';
 import MedicineCard from '../../components/MedicineCard';
 
 import { Container, MedicamentoTitle, MedicamentoList } from './styles';
+import SearchBar from '../../components/SearchBar';
 
 export interface Data {
   data: MedicineProps;
@@ -36,6 +37,7 @@ export default function Medicamentos(): JSX.Element {
   return (
     <Container>
       <MedicamentoTitle>Lista de Medicamentos</MedicamentoTitle>
+      <SearchBar />
       <MedicamentoList
         data={data}
         keyExtractor={item => item.id}
