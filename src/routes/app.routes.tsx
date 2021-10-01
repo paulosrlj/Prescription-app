@@ -4,7 +4,7 @@ import AuthenticatedRoutes from './authenticated.routes';
 import UnauthenticatedRoutes from './unauthenticated.routes';
 
 const isAuthenticated = () => {
-  return true;
+  return false;
 };
 
 export default function AppRoutes(): JSX.Element {

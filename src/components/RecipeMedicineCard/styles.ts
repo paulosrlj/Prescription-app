@@ -4,6 +4,7 @@ export const Container = styled.View`
   flex: 1;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   padding: 10px;
+  height: 85px;
 `;
 
 export const MedicineName = styled.Text`
