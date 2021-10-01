@@ -18,8 +18,15 @@ import {
   ButtonText,
   LogoutButton,
 } from './styles';
+import { useAuthContext } from '../../context/Authentication/AuthProvider';
 
 export default function Settings(): JSX.Element {
+  const { logout } = useAuthContext();
+
+  async function handleLogout() {
+    await logout();
+  }
+
   return (
     <Container>
       <Header>
@@ -56,7 +63,7 @@ export default function Settings(): JSX.Element {
       <CopyIdButton>
         <ButtonText>Copiar id</ButtonText>
       </CopyIdButton>
-      <LogoutButton onPress={() => null}>
+      <LogoutButton onPress={() => handleLogout()}>
         <ButtonText>Logout</ButtonText>
       </LogoutButton>
     </Container>
