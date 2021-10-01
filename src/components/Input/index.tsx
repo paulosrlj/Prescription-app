@@ -4,11 +4,16 @@ import { InputText } from './styles';
 interface IInputProps {
   placeholder: string;
   secureTextEntry?: boolean;
+  onChangeText?: (text: string) => void;
 }
 
 export default function Input(props: IInputProps): JSX.Element {
-  const { placeholder, secureTextEntry } = props;
+  const { placeholder, secureTextEntry, onChangeText } = props;
   return (
-    <InputText placeholder={placeholder} secureTextEntry={secureTextEntry} />
+    <InputText
+      onChangeText={onChangeText}
+      placeholder={placeholder}
+      secureTextEntry={secureTextEntry}
+    />
   );
 }
