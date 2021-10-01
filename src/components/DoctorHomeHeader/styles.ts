@@ -4,7 +4,7 @@ import { Platform, StatusBar } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
-  max-height: 220px;
+  max-height: 180px;
 `;
 
 export const HeaderGradient = styled(LinearGradient)`
@@ -23,7 +23,7 @@ export const DoctorInfo = styled.View`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  height: 110px;
+  height: 80px;
 `;
 export const DoctorName = styled.Text`
   font-size: 18px;
