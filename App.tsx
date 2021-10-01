@@ -21,6 +21,7 @@ import NavBar from './src/routes/BottomNavBar.routes';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
+import AppRoutes from './src/routes/app.routes';
 
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
@@ -35,7 +36,8 @@ export default function App(): JSX.Element {
     <IsModalActiveProvider>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <NavBar />
+          <AppRoutes />
+          {/* <NavBar /> */}
           {/* <Login /> */}
           {/* <Settings /> */}
         </NavigationContainer>

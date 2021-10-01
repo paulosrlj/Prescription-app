@@ -5,6 +5,8 @@ import { useTheme } from 'styled-components';
 import { MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
 import Settings from '../screens/Settings';
 import HomePaciente from '../screens/HomePaciente';
+import Medicamentos from '../screens/Medicamentos';
+import DoctorHome from '../screens/DoctorHome';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -20,9 +22,19 @@ export default function AuthenticatedRoutes(): JSX.Element {
         tabBarLabel: () => null,
       }}
     >
-      <Screen
+      {/* <Screen
         name="HomePaciente"
         component={HomePaciente}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <SimpleLineIcons name="credit-card" size={size} color={color} />
+          ),
+        }}
+      /> */}
+
+      <Screen
+        name="DoctorHome"
+        component={DoctorHome}
         options={{
           tabBarIcon: ({ size, color }) => (
             <SimpleLineIcons name="credit-card" size={size} color={color} />
@@ -32,7 +44,7 @@ export default function AuthenticatedRoutes(): JSX.Element {
 
       <Screen
         name="SearchMedicine"
-        component={HomePaciente} // TODO -> trocar quando a tela tiver pronta
+        component={Medicamentos} // TODO -> trocar quando a tela tiver pronta
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="pill" size={size} color={color} />
