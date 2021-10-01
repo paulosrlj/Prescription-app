@@ -7,6 +7,7 @@ import Settings from '../screens/Settings';
 import HomePaciente from '../screens/HomePaciente';
 import Medicamentos from '../screens/Medicamentos';
 import DoctorHome from '../screens/DoctorHome';
+import DrugstoresMap from '../screens/DrugstoresMap';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -54,7 +55,7 @@ export default function AuthenticatedRoutes(): JSX.Element {
 
       <Screen
         name="SearchDrugstores"
-        component={HomePaciente}
+        component={DrugstoresMap}
         options={{
           tabBarIcon: ({ size, color }) => (
             <SimpleLineIcons name="location-pin" size={size} color={color} />

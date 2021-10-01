@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
-import { FlatList } from 'react-native';
+import { FlatList, Dimensions } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { IRecipeMedicinesListProps } from '.';
 
 export const Container = styled.View`
@@ -10,10 +11,10 @@ export const Container = styled.View`
 
 export const RegisterRecipeTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 27px;
+  font-size: ${RFValue(27)}px;
   color: ${({ theme }) => theme.colors.text_black};
 
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 30px;
 
   text-align: center;
@@ -46,7 +47,7 @@ export const MedicinesList = styled(
 ).attrs({
   showsVerticalScrollIndicator: false,
 })`
-  max-height: 200px;
+  max-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
   border: 1px solid transparent;
 `;
 
