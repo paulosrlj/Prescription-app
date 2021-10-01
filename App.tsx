@@ -12,12 +12,8 @@ import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
 import theme from './src/global/styles/theme';
 
-import HomePaciente from './src/screens/HomePaciente';
-import Settings from './src/screens/Settings';
-import Login from './src/screens/Login';
-
 // Routes
-import NavBar from './src/routes/BottomNavBar.routes';
+import AppRoutes from './src/routes/app.routes';
 
 // Contexts
 import { IsModalActiveProvider } from './src/context/Modal';
@@ -35,7 +31,7 @@ export default function App(): JSX.Element {
     <IsModalActiveProvider>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <NavBar />
+          <AppRoutes />
           {/* <Login /> */}
           {/* <Settings /> */}
         </NavigationContainer>
