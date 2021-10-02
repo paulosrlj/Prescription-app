@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AxiosResponse } from 'axios';
 import api from '../../services/api';
 
-interface User {
+export interface User {
   cpf: string;
   name: string;
   email: string;
