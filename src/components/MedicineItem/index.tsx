@@ -7,7 +7,17 @@ import {
   TextBox,
 } from './style';
 
-import { MedicineType } from '../../context/Modal';
+export interface MedicineProps {
+  id: string;
+  medicineName: string;
+  categoria: string;
+  numeroRegistro: number;
+  classeTerapeutica: string;
+  empresaDetentora: string;
+  dosage: string;
+  createdDate: string;
+  vality: string;
+}
 
 export interface Props {
   data: MedicineType;

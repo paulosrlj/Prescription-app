@@ -2,9 +2,10 @@ import styled from 'styled-components/native';
 import { Entypo } from '@expo/vector-icons';
 
 import { RFValue } from 'react-native-responsive-fontsize';
+import { RecipeText } from '../MedicineItem/style';
 
 export const Container = styled.TouchableHighlight`
-  height: 62px;
+  height: 165px;
   width: 100%;
 
   border: 1px solid ${({ theme }) => theme.colors.secondary_blue};
@@ -28,8 +29,12 @@ export const TextContainer = styled.View`
 
 export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 18px;
+  font-size: 25px;
   color: ${({ theme }) => theme.colors.text_black};
+`;
+
+export const Label = styled(RecipeText)`
+  font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const Vality = styled.Text`
