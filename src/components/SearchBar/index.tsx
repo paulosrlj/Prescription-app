@@ -9,7 +9,7 @@ export default function SearchBar(): JSX.Element {
 
   return (
     <Container style={{ width: animation }}>
-      <Input autoFocus />
+      <Input autoFocus placeholder="Digite algo..." />
       <BoxButtonSearch>
         <SearchIcon />
       </BoxButtonSearch>
