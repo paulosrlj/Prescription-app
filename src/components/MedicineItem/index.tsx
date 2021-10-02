@@ -10,6 +10,10 @@ import {
 export interface MedicineProps {
   id: string;
   medicineName: string;
+  categoria: string;
+  numeroRegistro: number;
+  classeTerapeutica: string;
+  empresaDetentora: string;
   dosage: string;
   createdDate: string;
   vality: string;
