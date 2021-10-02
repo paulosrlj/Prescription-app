@@ -8,6 +8,7 @@ import HomePaciente from '../screens/HomePaciente';
 import Medicamentos from '../screens/Medicamentos';
 import DoctorHome from '../screens/DoctorHome';
 import DrugstoresMap from '../screens/DrugstoresMap';
+import MedicamentosForm from '../screens/MedicamentosForm';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
