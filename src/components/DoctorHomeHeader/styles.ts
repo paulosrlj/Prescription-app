@@ -3,8 +3,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Platform, StatusBar } from 'react-native';
 
 export const Container = styled.View`
-  flex: 1;
-  max-height: 180px;
+  display: flex;
+  height: 25%;
 `;
 
 export const HeaderGradient = styled(LinearGradient)`
@@ -23,7 +23,7 @@ export const DoctorInfo = styled.View`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  height: 80px;
+  height: 100%;
 `;
 export const DoctorName = styled.Text`
   font-size: 18px;

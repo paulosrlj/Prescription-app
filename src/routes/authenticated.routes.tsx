@@ -8,7 +8,8 @@ import HomePaciente from '../screens/HomePaciente';
 import Medicamentos from '../screens/Medicamentos';
 import DoctorHome from '../screens/DoctorHome';
 import DrugstoresMap from '../screens/DrugstoresMap';
-import MedicamentosForm from '../screens/MedicamentosForm';
+// import MedicamentosForm from '../screens/MedicamentosForm';
+import AddMedicine from '../screens/AddMedicine';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -43,6 +44,16 @@ export default function AuthenticatedRoutes(): JSX.Element {
           ),
         }}
       />
+
+      {/* <Screen
+        name="AddMedicine"
+        component={AddMedicine}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <SimpleLineIcons name="credit-card" size={size} color={color} />
+          ),
+        }}
+      /> */}
 
       <Screen
         name="SearchMedicine"
