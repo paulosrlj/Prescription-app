@@ -13,54 +13,41 @@ import {
 
 export interface IRecipeMedicinesListProps {
   id: string;
-  medicineName: string;
-  dosage: string;
-  createdDate: string;
-  vality: string;
+  idRegister: string;
+  nome: string;
+  categoria: string;
+  classe_terapeutica: string;
+  empresa_detentora: string;
+  dosagem: string;
 }
 
 const data: IRecipeMedicinesListProps[] = [
   {
-    id: '295120',
-    medicineName: 'Roacutam',
-    dosage: '1 comprimido após o almoço',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
+    id: '4b5b8189-0137-4e66-b285-7737a284170',
+    idRegister: '102030',
+    nome: 'Dipirona',
+    categoria: 'Remédio',
+    classe_terapeutica: 'Analgésico',
+    empresa_detentora: 'Farmaco LTDA',
+    dosagem: '1ml a cada 2 horas',
   },
   {
-    id: '217519',
-    medicineName: 'Remédio aleatório pra alergia',
-    dosage: '1 comprimido a cada 12 horas',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
+    id: 'd0bee775-873b-43fe-a45f-8a9df6f0d5f',
+    idRegister: '908070',
+    nome: 'Leuvofloxacino',
+    categoria: 'Remédio',
+    classe_terapeutica: 'Antialérgico',
+    empresa_detentora: 'Farmaco LTDA',
+    dosagem: '1 comprimido por dia',
   },
   {
-    id: '217518',
-    medicineName: 'Remédio aleatório pra alergia',
-    dosage: '1 comprimido a cada 12 horas',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
-  },
-  {
-    id: '217517',
-    medicineName: 'Remédio aleatório pra alergia',
-    dosage: '1 comprimido a cada 12 horas',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
-  },
-  {
-    id: '217516',
-    medicineName: 'Remédio aleatório pra alergia',
-    dosage: '1 comprimido a cada 12 horas',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
-  },
-  {
-    id: '217515',
-    medicineName: 'Remédio aleatório pra alergia',
-    dosage: '1 comprimido a cada 12 horas',
-    createdDate: '04/07/2020 - 19:05:33',
-    vality: '01/05/2023',
+    id: 'ab5ad859-7e50-4f87-b250-53063be3e08',
+    idRegister: '123456782',
+    nome: 'Dipirocaa',
+    categoria: 'Dor de cabeça',
+    classe_terapeutica: 'Dores musculares',
+    empresa_detentora: 'Inferno LTDA',
+    dosagem: '1 comprimido a cada 6 horas',
   },
 ];
 

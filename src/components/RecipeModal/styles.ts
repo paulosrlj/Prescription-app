@@ -43,6 +43,13 @@ export const ResponsibleDoctor = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
   font-size: 15px;
   color: ${({ theme }) => theme.colors.text_black};
+  margin: 0 10px;
+`;
+
+export const CrmDoctor = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.text_black};
 
   margin: 0 10px;
 `;
@@ -50,7 +57,7 @@ export const ResponsibleDoctor = styled.Text`
 export const PatientName = styled(ResponsibleDoctor)`
   font-family: ${({ theme }) => theme.fonts.regular};
 
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 `;
 
 export const MedicineList = styled(

@@ -5,7 +5,7 @@ import { IRecipeMedicinesListProps } from '.';
 
 export const Container = styled.View`
   flex: 1;
-
+  justify-content: space-between;
   margin: 0px 20px;
 `;
 
@@ -27,14 +27,14 @@ export const CPFPatientInput = styled.TextInput`
   margin-bottom: 10px;
 `;
 export const AddMedicineButton = styled.Pressable`
-  flex: 1;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  max-height: 37px;
   background: ${({ theme }) => theme.colors.primary};
   margin: 20px 0;
+  padding: 5px 0px;
 `;
 export const AddMedicineButtonLabel = styled.Text`
   color: ${({ theme }) => theme.colors.text};
@@ -47,7 +47,7 @@ export const MedicinesList = styled(
 ).attrs({
   showsVerticalScrollIndicator: false,
 })`
-  max-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
+  max-height: ${Math.floor(Dimensions.get('window').height / 4)}px;
   border: 1px solid transparent;
 `;
 

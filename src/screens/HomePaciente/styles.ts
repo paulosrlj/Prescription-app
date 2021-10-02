@@ -3,7 +3,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
 import { FlatList } from 'react-native';
-import { DataListProps } from '.';
+import { RecipeType } from '../../context/Modal';
 
 export const Container = styled.View`
   flex: 1;
@@ -23,7 +23,17 @@ export const RecipeTitle = styled.Text`
 `;
 
 export const RecipeList = styled(
-  FlatList as new () => FlatList<DataListProps>,
+  FlatList as new () => FlatList<RecipeType>,
 ).attrs({
   showsVerticalScrollIndicator: false,
 })``;
+
+export const NoRecipesContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NoRecipesText = styled.Text`
+  font-size: 20px;
+`;
