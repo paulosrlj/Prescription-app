@@ -23,7 +23,7 @@ export default function AuthenticatedRoutes(): JSX.Element {
         tabBarLabel: () => null,
       }}
     >
-      {/* <Screen
+      <Screen
         name="HomePaciente"
         component={HomePaciente}
         options={{
@@ -31,9 +31,9 @@ export default function AuthenticatedRoutes(): JSX.Element {
             <SimpleLineIcons name="credit-card" size={size} color={color} />
           ),
         }}
-      /> */}
+      />
 
-      <Screen
+      {/* <Screen
         name="DoctorHome"
         component={DoctorHome}
         options={{
@@ -41,7 +41,7 @@ export default function AuthenticatedRoutes(): JSX.Element {
             <SimpleLineIcons name="credit-card" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
 
       <Screen
         name="SearchMedicine"

@@ -7,35 +7,19 @@ import {
   TextBox,
 } from './style';
 
-export interface MedicineProps {
-  id: string;
-  medicineName: string;
-  dosage: string;
-  createdDate: string;
-  vality: string;
-}
+import { MedicineType } from '../../context/Modal';
 
 export interface Props {
-  data: MedicineProps;
+  data: MedicineType;
 }
 
 export default function MedicineItem({ data }: Props): JSX.Element {
   return (
     <MedicineBox>
-      <MedicineName>{data.medicineName}</MedicineName>
+      <MedicineName>{data.nome}</MedicineName>
       <TextBox>
         <Label>Dosagem:</Label>
-        <MedicineText>{data.dosage}</MedicineText>
-      </TextBox>
-
-      <TextBox>
-        <Label>Criada em:</Label>
-        <MedicineText>{data.createdDate}</MedicineText>
-      </TextBox>
-
-      <TextBox>
-        <Label>Valido até:</Label>
-        <MedicineText>{data.vality}</MedicineText>
+        <MedicineText>{data.dosagem}</MedicineText>
       </TextBox>
     </MedicineBox>
   );
