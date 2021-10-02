@@ -3,6 +3,10 @@ import React, { createContext, useState } from 'react';
 interface MedicineType {
   id: string;
   medicineName: string;
+  categoria: string;
+  numeroRegistro: number;
+  classeTerapeutica: string;
+  empresaDetentora: string;
   dosage: string;
   createdDate: string;
   vality: string;

@@ -48,7 +48,7 @@ export default function Medicamentos(): JSX.Element {
 
   return (
     <Container>
-      <MedicamentoTitle>Lista de Medicamentos</MedicamentoTitle>
+      <MedicamentoTitle>Procurar Medicamentos</MedicamentoTitle>
       <SearchBar />
       <MedicamentoList
         data={data}
