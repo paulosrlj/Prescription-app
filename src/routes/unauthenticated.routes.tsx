@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from '../screens/Login';
+import Medicamentos from '../screens/Medicamentos';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ export default function UnauthenticatedRoutes(): JSX.Element {
         headerShown: false,
       }}
     >
-      <Screen name="Login" component={Login} />
+      <Screen name="Login" component={Medicamentos} />
     </Navigator>
   );
 }
