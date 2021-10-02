@@ -1,4 +1,5 @@
 import React from 'react';
+import { MedicineType } from '../../context/Modal';
 import {
   Label,
   MedicineBox,
@@ -6,18 +7,6 @@ import {
   MedicineText,
   TextBox,
 } from './style';
-
-export interface MedicineProps {
-  id: string;
-  medicineName: string;
-  categoria: string;
-  numeroRegistro: number;
-  classeTerapeutica: string;
-  empresaDetentora: string;
-  dosage: string;
-  createdDate: string;
-  vality: string;
-}
 
 export interface Props {
   data: MedicineType;

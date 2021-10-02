@@ -8,6 +8,7 @@ import {
   ModalContainer,
   ModalTitle,
   PatientName,
+  CrmDoctor,
   ResponsibleDoctor,
 } from './styles';
 
@@ -33,11 +34,11 @@ export default function RecipeModal(): JSX.Element {
           <Pressable onPress={() => setIsActive(!isActive)}>
             <Icon name="window-close" />
           </Pressable>
-          <ModalTitle onPress={() => console.log(recipeProps)}>
-            {recipeProps.illness_name}
-          </ModalTitle>
+          <ModalTitle>{recipeProps.illness_name}</ModalTitle>
           <ResponsibleDoctor>Médico responsável:</ResponsibleDoctor>
           <PatientName>{recipeProps.doctor.name}</PatientName>
+          <CrmDoctor>Crm:</CrmDoctor>
+          <PatientName>{recipeProps.doctor.crm}</PatientName>
 
           <MedicineList
             keyExtractor={item => item.id}
