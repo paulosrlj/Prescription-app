@@ -16,16 +16,9 @@ export const InputContainer = styled.View`
   background-color: ${({ theme }) => theme.colors.background_input};
 `;
 
-export const Input = styled.TextInput`
-  padding: 3px 5px;
-  width: 100%;
-  font-family: ${({ theme }) => theme.fonts.medium};
-  color: ${({ theme }) => theme.colors.text_black};
-  background-color: transparent;
-`;
-
 export const FontAwesomeIcon = styled(FontAwesome5)`
-  margin: 0 8px;
+  text-align: center;
+  min-width: 10%;
 `;
 
 export const Button = styled.Pressable`
