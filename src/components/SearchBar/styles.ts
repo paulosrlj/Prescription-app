@@ -5,7 +5,7 @@ import { TextInput, Animated } from 'react-native';
 export const Container = styled(Animated.View)`
   width: 60px;
   height: 60px;
-  border-radius: 30px;
+  border-radius: 5px;
   margin: 20px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
 `;
@@ -21,7 +21,7 @@ export const BoxButtonSearch = styled.TouchableOpacity`
   height: 60px;
   position: absolute;
   right: 0px;
-  border-radius: 30px;
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
 `;
