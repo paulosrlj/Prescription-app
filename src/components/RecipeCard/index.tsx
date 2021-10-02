@@ -23,8 +23,8 @@ export default function RecipeCard({ data }: Data): JSX.Element {
       <>
         <Icon name="text-document" />
         <TextContainer>
-          <Title>{data.illnessName}</Title>
-          <Vality>Valido até: {data.vality}</Vality>
+          <Title>{data.illness_name}</Title>
+          <Vality>Valido até: {data.validade}</Vality>
         </TextContainer>
       </>
     </Container>

@@ -1,18 +1,23 @@
 import React, { createContext, useState } from 'react';
 
-interface MedicineType {
+export interface MedicineType {
   id: string;
-  medicineName: string;
-  dosage: string;
-  createdDate: string;
-  vality: string;
+  nome: string;
+  dosagem: string;
 }
 
-interface RecipeType {
+export interface DoctorType {
+  crm: string;
+  name: string;
+}
+
+export interface RecipeType {
   id: string;
-  illnessName: string;
-  responsibleDoctor: string;
-  medicineList: MedicineType[];
+  illness_name: string;
+  due: boolean;
+  validade: Date;
+  doctor: DoctorType;
+  medicines: MedicineType[];
 }
 
 const DEFAULT_VALUE = {
@@ -20,15 +25,18 @@ const DEFAULT_VALUE = {
   setIsActive: () => ({}),
   recipeProps: {
     id: '',
-    illnessName: '',
-    responsibleDoctor: '',
-    medicineList: [
+    illness_name: '',
+    doctor: {
+      crm: '',
+      name: '',
+    },
+    validade: new Date(),
+    due: false,
+    medicines: [
       {
         id: '',
-        medicineName: '',
-        dosage: '',
-        createdDate: '',
-        vality: '',
+        nome: '',
+        dosagem: '',
       },
     ],
   },
