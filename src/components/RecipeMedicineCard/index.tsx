@@ -1,6 +1,13 @@
 import React from 'react';
 import { IRecipeMedicinesListProps } from '../DoctorRecipeRegister';
-import { Container, MedicineName, MedicineDosage } from './styles';
+import {
+  Container,
+  MedicineName,
+  MedicineDosage,
+  MedicineInfo,
+  DeleteMedicineIcon,
+  DeleteMedicineButton,
+} from './styles';
 
 interface IRecipeMedicineCardProps {
   data: IRecipeMedicinesListProps;
@@ -8,12 +15,17 @@ interface IRecipeMedicineCardProps {
 
 const RecipeMedicineCard = (props: IRecipeMedicineCardProps): JSX.Element => {
   const { data } = props;
-  const { medicineName, dosage } = data;
+  const { nome, dosagem } = data;
 
   return (
     <Container>
-      <MedicineName>{medicineName}</MedicineName>
-      <MedicineDosage>{dosage}</MedicineDosage>
+      <MedicineInfo>
+        <MedicineName>{nome}</MedicineName>
+        <DeleteMedicineButton>
+          <DeleteMedicineIcon name="delete" />
+        </DeleteMedicineButton>
+      </MedicineInfo>
+      <MedicineDosage>{dosagem}</MedicineDosage>
     </Container>
   );
 };

@@ -1,25 +1,21 @@
 import React from 'react';
-import RecipeMedicineCard from '../RecipeMedicineCard';
+import { IRecipeMedicinesListProps } from '../../components/DoctorRecipeRegister';
+import Logo from '../../components/Logo';
+import RecipeMedicineCard from '../../components/RecipeMedicineCard';
 import {
   Container,
-  RegisterRecipeTitle,
-  CPFPatientInput,
-  AddMedicineButton,
+  ScreenTitle,
+  SearchMedicineBox,
+  SearchMedicineInput,
+  SearchMedicineIcon,
+  DosageBox,
+  DosageLabel,
+  DosageInput,
+  AddDosageButton,
+  AddDosageButtonLabel,
+  SearchMedicineButton,
   MedicinesList,
-  DoneRecipeButton,
-  AddMedicineButtonLabel,
-  DoneRecipeButtonLabel,
 } from './styles';
-
-export interface IRecipeMedicinesListProps {
-  id: string;
-  idRegister: string;
-  nome: string;
-  categoria: string;
-  classe_terapeutica: string;
-  empresa_detentora: string;
-  dosagem: string;
-}
 
 const data: IRecipeMedicinesListProps[] = [
   {
@@ -51,24 +47,31 @@ const data: IRecipeMedicinesListProps[] = [
   },
 ];
 
-const DoctorRecipeRegister = (): JSX.Element => {
+const AddMedicine = (): JSX.Element => {
   return (
     <Container>
-      <RegisterRecipeTitle>Cadastrar Receita</RegisterRecipeTitle>
-      <CPFPatientInput placeholder="CPF do paciente" />
-      <AddMedicineButton onPress={() => { }}>
-        <AddMedicineButtonLabel>Adicionar medicamentos</AddMedicineButtonLabel>
-      </AddMedicineButton>
+      <Logo />
+      <ScreenTitle>Adicionar medicamentos</ScreenTitle>
+      <SearchMedicineBox>
+        <SearchMedicineInput placeholder="Nome do medicamento" />
+        <SearchMedicineButton>
+          <SearchMedicineIcon name="search" />
+        </SearchMedicineButton>
+      </SearchMedicineBox>
       <MedicinesList
         data={data}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <RecipeMedicineCard data={item} />}
       />
-      <DoneRecipeButton>
-        <DoneRecipeButtonLabel>Finalizar receita</DoneRecipeButtonLabel>
-      </DoneRecipeButton>
+      <DosageBox>
+        <DosageLabel>Dosagem:</DosageLabel>
+        <DosageInput />
+        <AddDosageButton>
+          <AddDosageButtonLabel>Adicionar remédio</AddDosageButtonLabel>
+        </AddDosageButton>
+      </DosageBox>
     </Container>
   );
 };
 
-export default DoctorRecipeRegister;
+export default AddMedicine;
