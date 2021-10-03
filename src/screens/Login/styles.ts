@@ -34,7 +34,7 @@ export const LightParagraph = styled.Text`
 `;
 
 export const Paragraph = styled.Text`
-  margin-bottom: 10px;
+  margin: 10px 0;
   font-size: 12px;
   color: ${({ theme }) => theme.colors.text_black};
   text-align: center;
