@@ -1,15 +1,11 @@
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {
-  Container,
-  Title,
-  Vality,
-  Label,
-  Negrito,
-  TextContainer,
-} from './styles';
+import { Container, Title, Label, Negrito, TextContainer } from './styles';
+import { MedicineType } from '../../util/types';
 
-import { Data } from '../../screens/Medicamentos';
+interface Data {
+  data: MedicineType;
+}
 
 export default function MedicineCard({ data }: Data): JSX.Element {
   return (
@@ -18,23 +14,20 @@ export default function MedicineCard({ data }: Data): JSX.Element {
         <MaterialCommunityIcons name="pill" size={30} />
         <TextContainer>
           <Title>
-            <Negrito>Nome:</Negrito> {data.medicineName}
+            <Negrito>Nome:</Negrito> {data.nome}
           </Title>
           <Label>
             <Negrito>Categoria:</Negrito> {data.categoria}
           </Label>
           <Label>
-            <Negrito>Número de registro:</Negrito> {data.numeroRegistro}
+            <Negrito>Número de registro:</Negrito> {data.idRegister}
           </Label>
           <Label>
-            <Negrito>Classe terapeutica:</Negrito> {data.classeTerapeutica}
+            <Negrito>Classe terapeutica:</Negrito> {data.classe_terapeutica}
           </Label>
           <Label>
-            <Negrito>Empresa detentora:</Negrito> {data.empresaDetentora}
+            <Negrito>Empresa detentora:</Negrito> {data.empresa_detentora}
           </Label>
-          <Vality>
-            <Negrito>Valido até:</Negrito> {data.vality}
-          </Vality>
         </TextContainer>
       </>
     </Container>

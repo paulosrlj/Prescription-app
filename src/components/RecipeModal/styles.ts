@@ -3,7 +3,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { RFValue } from 'react-native-responsive-fontsize';
 import { FlatList } from 'react-native';
-import { MedicineProps } from '../MedicineItem';
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -61,5 +60,5 @@ export const PatientName = styled(ResponsibleDoctor)`
 `;
 
 export const MedicineList = styled(
-  FlatList as new () => FlatList<MedicineProps>,
+  FlatList as new () => FlatList<MedicineType>,
 )``;
