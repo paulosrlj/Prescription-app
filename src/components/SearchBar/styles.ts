@@ -5,7 +5,7 @@ import { TextInput, Animated } from 'react-native';
 export const Container = styled(Animated.View)`
   width: 60px;
   height: 60px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 20px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
 `;

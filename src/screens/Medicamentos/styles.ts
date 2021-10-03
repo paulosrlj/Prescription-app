@@ -1,7 +1,7 @@
 import { FlatList } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
-import { MedicineProps } from '../../components/MedicineItem';
+import { MedicineType } from '../../util/types';
 
 export const Container = styled.View`
   flex: 1;
@@ -20,7 +20,7 @@ export const MedicamentoTitle = styled.Text`
   text-align: center;
 `;
 export const MedicamentoList = styled(
-  FlatList as new () => FlatList<MedicineProps>,
+  FlatList as new () => FlatList<MedicineType>,
 ).attrs({
   showsVerticalScrollIndicator: false,
 })``;
