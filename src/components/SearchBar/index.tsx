@@ -10,7 +10,7 @@ import api from '../../services/api';
 import { MedicineType } from '../../util/types';
 
 export default function SearchBar(): JSX.Element {
-  const animation = new Animated.Value(350);
+  const animation = new Animated.Value(Dimensions.get('window').width - 40);
   const { width } = Dimensions.get('window');
 
   const { medicine, setMedicine, setMedicineData, setIsEmpty } =
