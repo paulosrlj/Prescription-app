@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import AddMedicineModal from '../AddMedicineModal';
 import RecipeMedicineCard from '../RecipeMedicineCard';
+import { Context } from '../../context/AddMedicineModal';
 import {
   Container,
   RegisterRecipeTitle,
-  CPFPatientInput,
+  RecipeInfoInput,
   AddMedicineButton,
   MedicinesList,
   DoneRecipeButton,
   AddMedicineButtonLabel,
   DoneRecipeButtonLabel,
+  EmptyMedicinesList,
+  EmptyMedicinesListLabel,
 } from './styles';
+import { MedicineType } from '../../util/types';
+import api from '../../services/api';
 
 export interface IRecipeMedicinesListProps {
   id: string;
@@ -21,52 +27,126 @@ export interface IRecipeMedicinesListProps {
   dosagem: string;
 }
 
-const data: IRecipeMedicinesListProps[] = [
-  {
-    id: '4b5b8189-0137-4e66-b285-7737a284170',
-    idRegister: '102030',
-    nome: 'Dipirona',
-    categoria: 'Remédio',
-    classe_terapeutica: 'Analgésico',
-    empresa_detentora: 'Farmaco LTDA',
-    dosagem: '1ml a cada 2 horas',
-  },
-  {
-    id: 'd0bee775-873b-43fe-a45f-8a9df6f0d5f',
-    idRegister: '908070',
-    nome: 'Leuvofloxacino',
-    categoria: 'Remédio',
-    classe_terapeutica: 'Antialérgico',
-    empresa_detentora: 'Farmaco LTDA',
-    dosagem: '1 comprimido por dia',
-  },
-  {
-    id: 'ab5ad859-7e50-4f87-b250-53063be3e08',
-    idRegister: '123456782',
-    nome: 'Dipirocaa',
-    categoria: 'Dor de cabeça',
-    classe_terapeutica: 'Dores musculares',
-    empresa_detentora: 'Inferno LTDA',
-    dosagem: '1 comprimido a cada 6 horas',
-  },
-];
+interface IMedicineRequest {
+  idRegister: string;
+  dosagem: string;
+}
+
+export interface IRecipeRequest {
+  cpf_patient: string;
+  illness_name: string;
+  validade: string;
+  medicines: IMedicineRequest[];
+  due: boolean;
+}
 
 const DoctorRecipeRegister = (): JSX.Element => {
+  const { isActive, setIsActive, selectedMedicines, setSelectedMedicines } =
+    useContext(Context);
+
+  const [cpfPatient, setCpfPatient] = useState('');
+  const [illnessName, setIllnessName] = useState('');
+
+  const toggleModal = () => {
+    setIsActive(!isActive);
+  };
+
+  const removeRecipeMedicine = (medicine: MedicineType) => {
+    const newSelectedMedicines = selectedMedicines.filter(
+      selectedMedicine => selectedMedicine.id !== medicine.id,
+    );
+
+    setSelectedMedicines(newSelectedMedicines);
+  };
+
+  const validade = (anos: number) => {
+    const now = new Date();
+    const date = now.getDate();
+    const month = now.getMonth();
+    const year = now.getFullYear() + anos;
+
+    return `${date}/${month}/${year}`;
+  };
+
+  const clearRecipe = () => {
+    setCpfPatient('');
+    setIllnessName('');
+    setSelectedMedicines(new Array<MedicineType>());
+  };
+
+  const fieldsValidation = () => {
+    if (cpfPatient.trim() === '' || illnessName.trim() === '') return false;
+    return true;
+  };
+
+  const createRecipe = async () => {
+    if (!fieldsValidation()) return;
+
+    const medicines = selectedMedicines.map(item => ({
+      idRegister: item.idRegister,
+      dosagem: item.dosagem,
+    }));
+
+    const recipe: IRecipeRequest = {
+      cpf_patient: cpfPatient,
+      illness_name: illnessName,
+      medicines,
+      validade: validade(5),
+      due: false,
+    };
+
+    console.log(recipe);
+
+    await api.post('/recipes', recipe).then(
+      () => {
+        clearRecipe();
+      },
+      err => {
+        console.log(err);
+      },
+    );
+  };
+
+  const data = selectedMedicines;
+
   return (
     <Container>
       <RegisterRecipeTitle>Cadastrar Receita</RegisterRecipeTitle>
-      <CPFPatientInput placeholder="CPF do paciente" />
-      <AddMedicineButton onPress={() => { }}>
+      <RecipeInfoInput
+        value={cpfPatient}
+        onChangeText={setCpfPatient}
+        placeholder="CPF do paciente"
+      />
+      <RecipeInfoInput
+        value={illnessName}
+        onChangeText={setIllnessName}
+        placeholder="Nome da doença"
+      />
+      <AddMedicineButton onPress={() => toggleModal()}>
         <AddMedicineButtonLabel>Adicionar medicamentos</AddMedicineButtonLabel>
       </AddMedicineButton>
-      <MedicinesList
-        data={data}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => <RecipeMedicineCard data={item} />}
-      />
-      <DoneRecipeButton>
+      {selectedMedicines.length > 0 ? (
+        <MedicinesList
+          data={data}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <RecipeMedicineCard
+              removeRecipeMedicine={removeRecipeMedicine}
+              data={item}
+            />
+          )}
+        />
+      ) : (
+        <EmptyMedicinesList>
+          <EmptyMedicinesListLabel>
+            Nenhum medicamento adicionado
+          </EmptyMedicinesListLabel>
+        </EmptyMedicinesList>
+      )}
+      <DoneRecipeButton onPress={() => createRecipe()}>
         <DoneRecipeButtonLabel>Finalizar receita</DoneRecipeButtonLabel>
       </DoneRecipeButton>
+      <AddMedicineModal />
     </Container>
   );
 };
