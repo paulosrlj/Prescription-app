@@ -1,5 +1,4 @@
 import React from 'react';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Container, Title, Label, Negrito, TextContainer } from './styles';
 import { MedicineType } from '../../util/types';
 
@@ -11,7 +10,6 @@ export default function MedicineCard({ data }: Data): JSX.Element {
   return (
     <Container>
       <>
-        <MaterialCommunityIcons name="pill" size={30} />
         <TextContainer>
           <Title>
             <Negrito>Nome:</Negrito> {data.nome}
