@@ -14,31 +14,25 @@ export const RegisterRecipeTitle = styled.Text`
   font-size: ${RFValue(27)}px;
   color: ${({ theme }) => theme.colors.text_black};
 
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 10px 0px;
 
   text-align: center;
 `;
 
-export const CPFPatientInput = styled.TextInput`
+export const RecipeInfoInput = styled.TextInput`
   padding: 10px 20px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
-  margin-bottom: 10px;
 `;
 export const AddMedicineButton = styled.Pressable`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.primary};
-  margin: 20px 0;
   padding: 5px 0px;
 `;
 export const AddMedicineButtonLabel = styled.Text`
+  text-align: center;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 17px;
+  font-size: ${RFValue(17)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
@@ -47,22 +41,36 @@ export const MedicinesList = styled(
 ).attrs({
   showsVerticalScrollIndicator: false,
 })`
-  max-height: ${Math.floor(Dimensions.get('window').height / 4)}px;
-  border: 1px solid transparent;
+  min-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
+  max-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`;
+
+export const EmptyMedicinesList = styled.View`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
+  max-height: ${Math.floor(Dimensions.get('window').height / 5)}px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`;
+
+export const EmptyMedicinesListLabel = styled.Text`
+  font-size: ${RFValue(17)}px;
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;
 
 export const DoneRecipeButton = styled.Pressable`
-  flex: 1;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   border-radius: 10px;
   max-height: 37px;
+  margin-bottom: 20px;
+  padding: 5px 0px;
   background: ${({ theme }) => theme.colors.primary};
-  margin: 20px 0;
 `;
+
 export const DoneRecipeButtonLabel = styled.Text`
+  text-align: center;
   color: ${({ theme }) => theme.colors.text};
-  font-size: 17px;
+  font-size: ${RFValue(17)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
 `;
