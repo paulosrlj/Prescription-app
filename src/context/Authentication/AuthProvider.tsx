@@ -4,6 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AxiosResponse } from 'axios';
 import api from '../../services/api';
 
+import { Context as DoctorContext } from '../DoctorLogin/index';
+
 export interface User {
   cpf: string;
   name: string;
@@ -17,6 +19,7 @@ export interface User {
 interface Context {
   user: User | null;
   login: (cpf: string, password: string) => Promise<void>;
+  loginDoctor: (crm: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   isLogado: boolean;
 }
@@ -25,6 +28,7 @@ const AuthContext = createContext({} as Context);
 
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const { isDoctor } = useContext(DoctorContext);
 
   async function loadStorage() {
     const userStorage = await AsyncStorage.getItem('Auth.user');
@@ -54,6 +58,28 @@ export const AuthProvider: React.FC = ({ children }) => {
     setUser(response);
   }
 
+  async function loginDoctor(crm: string, password: string) {
+    const data = {
+      crm,
+      password,
+    };
+
+    console.log(data);
+
+    const { data: response } = (await api.post(
+      'doctors/login',
+      data,
+    )) as AxiosResponse<User>;
+
+    console.log(response);
+
+    api.defaults.headers.common.Authorization = `Bearer ${response.token}`;
+
+    await AsyncStorage.setItem('Auth.user', JSON.stringify(response));
+    await AsyncStorage.setItem('Auth.token', JSON.stringify(response.token));
+    setUser(response);
+  }
+
   async function logout() {
     setUser(null);
     await AsyncStorage.removeItem('Auth.user');
@@ -65,7 +91,9 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isLogado: !!user }}>
+    <AuthContext.Provider
+      value={{ user, login, logout, isLogado: !!user, loginDoctor }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useTheme } from 'styled-components';
 
@@ -11,10 +11,13 @@ import DrugstoresMap from '../screens/DrugstoresMap';
 // import MedicamentosForm from '../screens/MedicamentosForm';
 import AddMedicine from '../screens/AddMedicine';
 
+import { Context } from '../context/DoctorLogin';
+
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export default function AuthenticatedRoutes(): JSX.Element {
   const theme = useTheme();
+  const { isDoctor } = useContext(Context);
 
   return (
     <Navigator
@@ -25,25 +28,27 @@ export default function AuthenticatedRoutes(): JSX.Element {
         tabBarLabel: () => null,
       }}
     >
-      <Screen
-        name="HomePaciente"
-        component={HomePaciente}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <SimpleLineIcons name="credit-card" size={size} color={color} />
-          ),
-        }}
-      />
-
-      {/* <Screen
-        name="DoctorHome"
-        component={DoctorHome}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <SimpleLineIcons name="credit-card" size={size} color={color} />
-          ),
-        }}
-      /> */}
+      {isDoctor ? (
+        <Screen
+          name="DoctorHome"
+          component={DoctorHome}
+          options={{
+            tabBarIcon: ({ size, color }) => (
+              <SimpleLineIcons name="credit-card" size={size} color={color} />
+            ),
+          }}
+        />
+      ) : (
+        <Screen
+          name="HomePaciente"
+          component={HomePaciente}
+          options={{
+            tabBarIcon: ({ size, color }) => (
+              <SimpleLineIcons name="credit-card" size={size} color={color} />
+            ),
+          }}
+        />
+      )}
 
       {/* <Screen
         name="AddMedicine"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Logo from '../../components/Logo/index';
 import SignForm from '../../components/SignForm';
 import {
@@ -10,7 +10,11 @@ import {
   Title,
 } from './styles';
 
+import { Context } from '../../context/DoctorLogin';
+
 export default function Login(): JSX.Element {
+  const { isDoctor, setIsDoctor } = useContext(Context);
+
   return (
     <Container>
       <Logo />
@@ -33,6 +37,10 @@ export default function Login(): JSX.Element {
 
       <Paragraph>
         Não tem uma conta? <Link>Cadatre-se</Link>
+      </Paragraph>
+
+      <Paragraph onPress={() => setIsDoctor(!isDoctor)}>
+        {isDoctor ? 'É um paciente?' : 'É um médico?'} <Link>Logue aqui</Link>
       </Paragraph>
     </Container>
   );

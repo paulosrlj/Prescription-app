@@ -19,6 +19,7 @@ import AppRoutes from './src/routes/app.routes';
 import { IsModalActiveProvider } from './src/context/Modal';
 import { AuthProvider } from './src/context/Authentication/AuthProvider';
 import { MedicineProvider } from './src/context/MedicineSearch';
+import { IsDoctorProvider } from './src/context/DoctorLogin';
 
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
@@ -31,15 +32,17 @@ export default function App(): JSX.Element {
 
   return (
     <AuthProvider>
-      <IsModalActiveProvider>
-        <MedicineProvider>
-          <ThemeProvider theme={theme}>
-            <NavigationContainer>
-              <AppRoutes />
-            </NavigationContainer>
-          </ThemeProvider>
-        </MedicineProvider>
-      </IsModalActiveProvider>
+      <IsDoctorProvider>
+        <IsModalActiveProvider>
+          <MedicineProvider>
+            <ThemeProvider theme={theme}>
+              <NavigationContainer>
+                <AppRoutes />
+              </NavigationContainer>
+            </ThemeProvider>
+          </MedicineProvider>
+        </IsModalActiveProvider>
+      </IsDoctorProvider>
     </AuthProvider>
   );
 }
