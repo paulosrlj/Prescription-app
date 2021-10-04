@@ -54,7 +54,7 @@
 27-->[com.android.installreferrer:installreferrer:1.0] /home/paulo/.gradle/caches/transforms-3/750fed22d5cb8a404170e3fb9c085148/transformed/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
 28
 29    <application
-29-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:13:3-39:17
+29-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:13:3-40:17
 30        android:name="com.prescription.MainApplication"
 30-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:14:5-36
 31        android:allowBackup="false"
@@ -110,63 +110,71 @@
 56-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:34:19-66
 57            </intent-filter>
 58        </activity>
-59        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-59-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:38:5-81
-59-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:38:15-79
-60
-61        <meta-data
-61-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-14:91
-62            android:name="org.unimodules.core.AppLoader#react-native-headless"
-62-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-79
-63            android:value="org.unimodules.adapters.react.apploader.RNHeadlessAppLoader" />
-63-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-88
-64
-65        <provider
-65-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-26:20
-66            android:name="expo.modules.filesystem.FileSystemFileProvider"
-66-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-74
-67            android:authorities="com.prescription.FileSystemFileProvider"
-67-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
-68            android:exported="false"
-68-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-37
-69            android:grantUriPermissions="true" >
-69-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-47
-70            <meta-data
-70-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-25:70
-71                android:name="android.support.FILE_PROVIDER_PATHS"
-71-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:17-67
-72                android:resource="@xml/file_system_provider_paths" />
-72-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
-73        </provider> <!-- Needs to be explicitly declared on P+ -->
-74        <uses-library
-74-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
-75            android:name="org.apache.http.legacy"
-75-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
-76            android:required="false" />
-76-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
-77
-78        <activity
-78-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-79            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-79-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-80            android:exported="false"
-80-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-81            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-81-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+59
+60        <meta-data
+60-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:37:5-38:29
+61            android:name="com.google.android.maps.v2.API_KEY"
+61-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:37:16-65
+62            android:value="" />
+62-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:38:11-27
+63
+64        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+64-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:39:5-81
+64-->/home/paulo/Documentos/Prescription-app/android/app/src/main/AndroidManifest.xml:39:15-79
+65
+66        <meta-data
+66-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-14:91
+67            android:name="org.unimodules.core.AppLoader#react-native-headless"
+67-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-79
+68            android:value="org.unimodules.adapters.react.apploader.RNHeadlessAppLoader" />
+68-->[:unimodules-react-native-adapter] /home/paulo/Documentos/Prescription-app/node_modules/@unimodules/react-native-adapter/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-88
+69
+70        <provider
+70-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-26:20
+71            android:name="expo.modules.filesystem.FileSystemFileProvider"
+71-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-74
+72            android:authorities="com.prescription.FileSystemFileProvider"
+72-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-74
+73            android:exported="false"
+73-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-37
+74            android:grantUriPermissions="true" >
+74-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-47
+75            <meta-data
+75-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-25:70
+76                android:name="android.support.FILE_PROVIDER_PATHS"
+76-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:17-67
+77                android:resource="@xml/file_system_provider_paths" />
+77-->[:expo-file-system] /home/paulo/Documentos/Prescription-app/node_modules/expo-file-system/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+78        </provider> <!-- Needs to be explicitly declared on P+ -->
+79        <uses-library
+79-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+80            android:name="org.apache.http.legacy"
+80-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+81            android:required="false" />
+81-->[com.google.android.gms:play-services-maps:17.0.0] /home/paulo/.gradle/caches/transforms-3/88fa84f796253a71024b34769cd06654/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
 82
-83        <meta-data
-83-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-84            android:name="com.google.android.gms.version"
-84-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-85            android:value="@integer/google_play_services_version" />
-85-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-86
-87        <service
-87-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
-88            android:name="androidx.room.MultiInstanceInvalidationService"
-88-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
-89            android:exported="false" />
-89-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
-90    </application>
+83        <activity
+83-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+84            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+84-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+85            android:exported="false"
+85-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+86            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+86-->[com.google.android.gms:play-services-base:17.0.0] /home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+87
+88        <meta-data
+88-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+89            android:name="com.google.android.gms.version"
+89-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+90            android:value="@integer/google_play_services_version" />
+90-->[com.google.android.gms:play-services-basement:17.0.0] /home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
 91
-92</manifest>
+92        <service
+92-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+93            android:name="androidx.room.MultiInstanceInvalidationService"
+93-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+94            android:exported="false" />
+94-->[androidx.room:room-runtime:2.1.0] /home/paulo/.gradle/caches/transforms-3/3b5db4b3b22ae452a34a6490900f58b2/transformed/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+95    </application>
+96
+97</manifest>
