@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { MedicineType } from '../../util/types';
-import { Context } from '../../context/AddMedicineModal';
+import { MedicineType } from '../../../../util/types';
+import { Context } from '../../../../context/AddMedicineModal';
 import {
   Container,
   MedicineIcon,
@@ -13,7 +13,7 @@ interface IModalMedicineCardProps {
   data: MedicineType;
 }
 
-const ModalMedicineCard = (props: IModalMedicineCardProps): JSX.Element => {
+const MedicineCard = (props: IModalMedicineCardProps): JSX.Element => {
   const { data } = props;
   const { nome, classe_terapeutica } = data;
   const { setSelectedMedicine } = useContext(Context);
@@ -29,4 +29,4 @@ const ModalMedicineCard = (props: IModalMedicineCardProps): JSX.Element => {
   );
 };
 
-export default ModalMedicineCard;
+export default MedicineCard;

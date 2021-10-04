@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { RecipeText } from '../MedicineItem/style';
+import { RecipeText } from '../../../MedicineItem/style';
 
 export const Container = styled.TouchableHighlight`
   width: 100%;

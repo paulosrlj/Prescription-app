@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Modal, Pressable } from 'react-native';
-import { AxiosResponse } from 'axios';
 
 import {
   Icon,
@@ -20,43 +19,31 @@ import {
   AddModalMedicineBox,
   CancelAddMedicineButton,
   CancelAddMedicineButtonLabel,
+  ClearFiltersIcon,
+  ClearFiltersButton,
 } from './styles';
 
-import { Context } from '../../context/AddMedicineModal';
+import { Context } from '../../../../context/AddMedicineModal';
 
-import api from '../../services/api';
-import { MedicineType } from '../../util/types';
-import ModalMedicineCard from '../ModalMedicineCard';
-import ShowModalMedicineCard from '../ShowModalMedicineCard';
+import api from '../../../../services/api';
+import { MedicineType } from '../../../../util/types';
+import MedicineCard from '../MedicineCard';
+import MedicineInfoCard from '../MedicineInfoCard';
 
 export default function AddMedicineModal(): JSX.Element {
   const {
     isActive,
     setIsActive,
-    filteredMedicines,
-    setFilteredMedicines,
+    allMedicines,
     selectedMedicine,
     setSelectedMedicine,
     selectedMedicines,
     setSelectedMedicines,
   } = useContext(Context);
 
+  const [filteredMedicines, setFilteredMedicines] = useState(allMedicines);
+  const [medicineName, setMedicineName] = useState('');
   const [dosagem, setDosagem] = useState('');
-
-  const fetchMedicines = async () => {
-    try {
-      const { data: response } = (await api.get(
-        '/medicines',
-      )) as unknown as AxiosResponse<MedicineType[]>;
-      setFilteredMedicines(response);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchMedicines();
-  });
 
   const clearSelectedMedicine = () => {
     setSelectedMedicine({
@@ -79,6 +66,30 @@ export default function AddMedicineModal(): JSX.Element {
     clearSelectedMedicine();
   };
 
+  const clearFilters = () => {
+    setMedicineName('');
+    setFilteredMedicines(allMedicines.map(item => item));
+  };
+
+  const searchMedicines = () => {
+    if (medicineName !== '') {
+      const newFilteredMedicines = allMedicines.filter(
+        item =>
+          item.nome.toUpperCase().indexOf(medicineName.toUpperCase()) === 0,
+      );
+      setFilteredMedicines(newFilteredMedicines);
+    } else clearFilters();
+  };
+
+  const showMedicines = () => {
+    return filteredMedicines.filter(
+      item =>
+        selectedMedicines.filter(
+          medicine => medicine.idRegister === item.idRegister,
+        ).length === 0,
+    );
+  };
+
   return (
     <Modal
       animationType="slide"
@@ -98,20 +109,27 @@ export default function AddMedicineModal(): JSX.Element {
           {selectedMedicine.nome === '' ? (
             <AddModalMedicineBox>
               <SearchMedicineBox>
-                <SearchMedicineInput placeholder="Nome do medicamento" />
-                <SearchMedicineButton>
+                <SearchMedicineInput
+                  value={medicineName}
+                  onChangeText={setMedicineName}
+                  placeholder="Nome do medicamento"
+                />
+                <ClearFiltersButton onPress={() => clearFilters()}>
+                  <ClearFiltersIcon name="window-close" />
+                </ClearFiltersButton>
+                <SearchMedicineButton onPress={() => searchMedicines()}>
                   <SearchMedicineIcon name="search" />
                 </SearchMedicineButton>
               </SearchMedicineBox>
               <MedicinesList
-                data={filteredMedicines}
+                data={showMedicines()}
                 keyExtractor={item => item.id}
-                renderItem={({ item }) => <ModalMedicineCard data={item} />}
+                renderItem={({ item }) => <MedicineCard data={item} />}
               />
             </AddModalMedicineBox>
           ) : (
             <AddModalMedicineBox>
-              <ShowModalMedicineCard data={selectedMedicine} />
+              <MedicineInfoCard data={selectedMedicine} />
               <DosageBox>
                 <DosageLabel>Dosagem:</DosageLabel>
                 <DosageInput onChangeText={setDosagem} placeholder="Dosagem" />

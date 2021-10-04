@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
-import AddMedicineModal from '../AddMedicineModal';
+import React, { useContext, useEffect, useState } from 'react';
+import AddMedicineModal from '../Modal/AddMedicineModal';
 import RecipeMedicineCard from '../RecipeMedicineCard';
-import { Context } from '../../context/AddMedicineModal';
+import { Context } from '../../../context/AddMedicineModal';
 import {
   Container,
   RegisterRecipeTitle,
@@ -14,8 +14,8 @@ import {
   EmptyMedicinesList,
   EmptyMedicinesListLabel,
 } from './styles';
-import { MedicineType } from '../../util/types';
-import api from '../../services/api';
+import { MedicineType } from '../../../util/types';
+import api from '../../../services/api';
 
 export interface IRecipeMedicinesListProps {
   id: string;
@@ -40,9 +40,14 @@ export interface IRecipeRequest {
   due: boolean;
 }
 
-const DoctorRecipeRegister = (): JSX.Element => {
-  const { isActive, setIsActive, selectedMedicines, setSelectedMedicines } =
-    useContext(Context);
+const RecipeRegister = (): JSX.Element => {
+  const {
+    isActive,
+    setIsActive,
+    selectedMedicines,
+    setSelectedMedicines,
+    setAllMedicines,
+  } = useContext(Context);
 
   const [cpfPatient, setCpfPatient] = useState('');
   const [illnessName, setIllnessName] = useState('');
@@ -107,6 +112,22 @@ const DoctorRecipeRegister = (): JSX.Element => {
     );
   };
 
+  const fetchMedicines = async () => {
+    await api.get('/medicines').then(
+      response => {
+        const { data } = response;
+        setAllMedicines(data);
+      },
+      err => {
+        console.log(err);
+      },
+    );
+  };
+
+  useEffect(() => {
+    fetchMedicines();
+  });
+
   const data = selectedMedicines;
 
   return (
@@ -151,4 +172,4 @@ const DoctorRecipeRegister = (): JSX.Element => {
   );
 };
 
-export default DoctorRecipeRegister;
+export default RecipeRegister;
