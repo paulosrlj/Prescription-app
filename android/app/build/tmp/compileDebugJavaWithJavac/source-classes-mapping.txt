@@ -1,0 +1,17 @@
+com/prescription/MainApplication.java
+ com.prescription.MainApplication
+ com.prescription.MainApplication$1
+com/prescription/generated/BasePackageList.java
+ com.prescription.generated.BasePackageList
+com/prescription/ReactNativeFlipper.java
+ com.prescription.ReactNativeFlipper
+ com.prescription.ReactNativeFlipper$1
+ com.prescription.ReactNativeFlipper$2
+ com.prescription.ReactNativeFlipper$2$1
+com/prescription/BuildConfig.java
+ com.prescription.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/prescription/MainActivity.java
+ com.prescription.MainActivity
+ com.prescription.MainActivity$1
