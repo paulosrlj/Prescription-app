@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AddMedicineModal from '../Modal/AddMedicineModal';
+import AddMedicineModal from '../AddMedicine/AddMedicineModal';
 import RecipeMedicineCard from '../RecipeMedicineCard';
-import { Context } from '../../../context/AddMedicineModal';
+import { Context as AddExamModalContext } from '../../../context/AddExamModal';
+import { Context as AddMedicineModalContext } from '../../../context/AddMedicineModal';
 import {
   Container,
   RegisterRecipeTitle,
@@ -16,6 +17,7 @@ import {
 } from './styles';
 import { MedicineType } from '../../../util/types';
 import api from '../../../services/api';
+import AddExamModal from '../AddExam/AddExamModal';
 
 export interface IRecipeMedicinesListProps {
   id: string;
@@ -42,18 +44,27 @@ export interface IRecipeRequest {
 
 const RecipeRegister = (): JSX.Element => {
   const {
-    isActive,
-    setIsActive,
+    isActive: AddMedicineModalIsActive,
+    setIsActive: setAddMedicineModalIsActive,
     selectedMedicines,
     setSelectedMedicines,
     setAllMedicines,
-  } = useContext(Context);
+  } = useContext(AddMedicineModalContext);
+
+  const {
+    isActive: AddExamModalIsActive,
+    setIsActive: setAddExamModalIsActive,
+  } = useContext(AddExamModalContext);
 
   const [cpfPatient, setCpfPatient] = useState('');
   const [illnessName, setIllnessName] = useState('');
 
-  const toggleModal = () => {
-    setIsActive(!isActive);
+  const toggleAddExamModal = () => {
+    setAddExamModalIsActive(!AddMedicineModalIsActive);
+  };
+
+  const toggleAddMedicineModal = () => {
+    setAddMedicineModalIsActive(!AddExamModalIsActive);
   };
 
   const removeRecipeMedicine = (medicine: MedicineType) => {
@@ -143,7 +154,10 @@ const RecipeRegister = (): JSX.Element => {
         onChangeText={setIllnessName}
         placeholder="Nome da doença"
       />
-      <AddMedicineButton onPress={() => toggleModal()}>
+      <AddMedicineButton onPress={() => toggleAddExamModal()}>
+        <AddMedicineButtonLabel>Adicionar exame</AddMedicineButtonLabel>
+      </AddMedicineButton>
+      <AddMedicineButton onPress={() => toggleAddMedicineModal()}>
         <AddMedicineButtonLabel>Adicionar medicamentos</AddMedicineButtonLabel>
       </AddMedicineButton>
       {selectedMedicines.length > 0 ? (
@@ -167,6 +181,7 @@ const RecipeRegister = (): JSX.Element => {
       <DoneRecipeButton onPress={() => createRecipe()}>
         <DoneRecipeButtonLabel>Finalizar receita</DoneRecipeButtonLabel>
       </DoneRecipeButton>
+      <AddExamModal />
       <AddMedicineModal />
     </Container>
   );
