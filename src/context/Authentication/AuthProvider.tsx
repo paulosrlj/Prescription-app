@@ -6,15 +6,7 @@ import api from '../../services/api';
 
 import { Context as DoctorContext } from '../DoctorLogin/index';
 
-export interface User {
-  cpf: string;
-  name: string;
-  email: string;
-  birth_date: Date;
-  phone: string;
-  card_id: string;
-  token: string;
-}
+import { User } from '../../util/types';
 
 interface Context {
   user: User | null;

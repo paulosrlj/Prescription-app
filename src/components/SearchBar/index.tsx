@@ -35,11 +35,7 @@ export default function SearchBar(): JSX.Element {
 
   return (
     <Container style={{ width: animation }}>
-      <Input
-        onChangeText={setMedicine}
-        autoFocus
-        placeholder="Digite algo..."
-      />
+      <Input onChangeText={setMedicine} placeholder="Digite algo..." />
       <BoxButtonSearch onPress={() => handleSearch()}>
         <SearchIcon />
       </BoxButtonSearch>

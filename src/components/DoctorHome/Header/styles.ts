@@ -12,10 +12,8 @@ export const HeaderGradient = styled(LinearGradient)`
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  margin: ${Platform.OS === 'android'
-    ? (StatusBar.currentHeight || 0) + 0
-    : 0}px
-    auto 0;
+  margin: ${Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0}px auto
+    0;
   padding: 30px 20px;
 `;
 

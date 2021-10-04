@@ -30,8 +30,8 @@ export const PatientCard = styled.View`
   width: ${RFPercentage(52)}px;
   height: 100%;
   margin: ${Platform.OS === 'android'
-    ? (StatusBar.currentHeight || 0) + 30
-    : 0}px
+      ? (StatusBar.currentHeight || 0) + 30
+      : 0}px
     auto 0;
 
   border-radius: 5px;
@@ -62,7 +62,7 @@ export const Logo = styled.View`
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  margin-top: 45px;
+  margin-top: ${RFValue(65)}px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`

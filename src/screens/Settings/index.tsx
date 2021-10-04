@@ -21,7 +21,7 @@ import {
 import { useAuthContext } from '../../context/Authentication/AuthProvider';
 
 export default function Settings(): JSX.Element {
-  const { logout } = useAuthContext();
+  const { logout, user } = useAuthContext();
 
   async function handleLogout() {
     await logout();
@@ -31,8 +31,13 @@ export default function Settings(): JSX.Element {
     <Container>
       <Header>
         <PatientCard>
-          <PatientCardName>Paulo Sérgio Rodrigues Leite Junior</PatientCardName>
-          <PatientCardCpf>111.111.111-00</PatientCardCpf>
+          <PatientCardName>{user?.name}</PatientCardName>
+          {user?.cpf ? (
+            <PatientCardCpf>{user?.cpf}</PatientCardCpf>
+          ) : (
+            <PatientCardCpf>{user?.crm}</PatientCardCpf>
+          )}
+
           <Logo>
             <Icon name="pill" />
             <LogoText>PRESCRIPTION</LogoText>
@@ -48,15 +53,18 @@ export default function Settings(): JSX.Element {
           <InfoLabel>Email</InfoLabel>
           <InfoLabel>Data Nasc</InfoLabel>
           <InfoLabel>Telefone</InfoLabel>
-          <InfoLabel>ID Cartão</InfoLabel>
         </Divider>
         <Divider>
-          <InfoText>Paulo Sérgio Rodrigues Leite Junior</InfoText>
-          <InfoText>000.000.000.00</InfoText>
-          <InfoText>paulo.leite@academico.ifpb.edu.br</InfoText>
-          <InfoText>30/05/2001</InfoText>
-          <InfoText>(83) 00000-0000</InfoText>
-          <InfoText>ff994260-8236-49c2-841b-21acd29b10b0</InfoText>
+          <InfoText>{user?.name}</InfoText>
+          {user?.cpf ? (
+            <InfoText>{user?.cpf}</InfoText>
+          ) : (
+            <InfoText>{user?.crm}</InfoText>
+          )}
+
+          <InfoText>{user?.email}</InfoText>
+          <InfoText>{user?.birth_date}</InfoText>
+          <InfoText>{user?.phone}</InfoText>
         </Divider>
       </InfoBox>
 

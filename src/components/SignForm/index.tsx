@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
 
-import { View, Text } from 'react-native';
 import Input from '../Input/index';
 import {
   InputContainer,
@@ -23,9 +21,6 @@ import { loginSchema } from '../../util/Validations';
 export default function SignForm(): JSX.Element {
   const { isDoctor, setIsDoctor } = useContext(Context);
 
-  // const [cpf, setCpf] = useState('');
-  // const [password, setPassword] = useState('');
-
   const { login, loginDoctor } = useAuthContext();
 
   async function handleLogin(cpf: string, password: string) {
@@ -39,7 +34,7 @@ export default function SignForm(): JSX.Element {
 
   return (
     <Formik
-      validationSchema={loginSchema}
+      validationSchema={isDoctor ? '' : loginSchema}
       initialValues={{
         cpf: '',
         password: '',
@@ -52,7 +47,7 @@ export default function SignForm(): JSX.Element {
           <InputContainer>
             <FontAwesomeIcon name="user-alt" size={14} color="black" />
             <Input
-              maxLength={11}
+              maxLength={isDoctor ? 20 : 11}
               keyboardType="numeric"
               onChangeText={handleChange('cpf')}
               onBlur={handleBlur('cpf')}

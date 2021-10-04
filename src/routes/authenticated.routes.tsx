@@ -9,7 +9,7 @@ import Medicamentos from '../screens/Medicamentos';
 import DoctorHome from '../screens/DoctorHome';
 import DrugstoresMap from '../screens/DrugstoresMap';
 // import MedicamentosForm from '../screens/MedicamentosForm';
-import AddMedicine from '../screens/AddMedicine';
+// import AddMedicine from '../screens/AddMedicine';
 
 import { Context } from '../context/DoctorLogin';
 
