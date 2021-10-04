@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
+            "outputFile": "/home/paulo/Documentos/Prescription-app/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn/values-kn.xml",
             "map": [
                 {
                     "source": "/home/paulo/.gradle/caches/transforms-3/c810a29ee9cc32eddbe9f435a5d40943/transformed/appcompat-1.2.0/res/values-kn/values-kn.xml",

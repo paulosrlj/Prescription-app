@@ -54,7 +54,6 @@ const drugstores2: IDrugstore[] = [
 ];
 
 const DrugstoresMap = (): JSX.Element => {
-
   const [drugstores, setDrugstores] = useState<IDrugstore[]>(drugstores2);
 
   useEffect(() => {
