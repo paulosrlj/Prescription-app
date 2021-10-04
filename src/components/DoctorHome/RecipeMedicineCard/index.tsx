@@ -1,6 +1,6 @@
 import React from 'react';
-import { MedicineType } from '../../util/types';
-import { IRecipeMedicinesListProps } from '../DoctorRecipeRegister';
+import { MedicineType } from '../../../util/types';
+import { IRecipeMedicinesListProps } from '../RecipeRegister';
 import {
   Container,
   MedicineName,

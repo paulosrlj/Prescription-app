@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuthContext } from '../../../context/Authentication/AuthProvider';
 import {
   Container,
   DoctorInfo,
@@ -9,13 +10,15 @@ import {
   HeaderGradient,
 } from './styles';
 
-const DoctorHomeHeader = (): JSX.Element => {
+const Header = (): JSX.Element => {
+  const { user } = useAuthContext();
+
   return (
     <Container>
       <HeaderGradient colors={['#49DAD0', 'transparent']}>
         <DoctorInfo>
-          <DoctorName>Paulo Sérgio Rodrigues Leite Junior</DoctorName>
-          <DoctorCRM>000.000.000-00</DoctorCRM>
+          <DoctorName>{user?.name}</DoctorName>
+          <DoctorCRM>{user?.crm}</DoctorCRM>
           <DoctorLabel>Médico</DoctorLabel>
         </DoctorInfo>
         {/* <DoctorImg
@@ -28,4 +31,4 @@ const DoctorHomeHeader = (): JSX.Element => {
   );
 };
 
-export default DoctorHomeHeader;
+export default Header;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Title, Label, Negrito, TextContainer } from './styles';
-import { MedicineType } from '../../util/types';
+import { MedicineType } from '../../../../util/types';
 
 interface Data {
   data: MedicineType;
 }
 
-export default function ShowModalMedicineCard({ data }: Data): JSX.Element {
+export default function MedicineInfoCard({ data }: Data): JSX.Element {
   return (
     <Container>
       <>
