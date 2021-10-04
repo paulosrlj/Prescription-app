@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
+            "outputFile": "/home/paulo/Documentos/Prescription-app/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr/values-fr.xml",
             "map": [
                 {
                     "source": "/home/paulo/.gradle/caches/transforms-3/8d613bce69ff230aa5061ee1fced0d13/transformed/jetified-play-services-basement-17.0.0/res/values-fr/values.xml",

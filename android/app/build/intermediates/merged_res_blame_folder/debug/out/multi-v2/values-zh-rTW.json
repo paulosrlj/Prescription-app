@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/paulo/Documentos/react-native-projects/prescription/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "/home/paulo/Documentos/Prescription-app/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/home/paulo/.gradle/caches/transforms-3/1dca9734d5f87c4d88604365b65ae74d/transformed/jetified-play-services-base-17.0.0/res/values-zh-rTW/values.xml",

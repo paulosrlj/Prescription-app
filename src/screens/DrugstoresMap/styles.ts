@@ -11,8 +11,8 @@ export const DrugstoresMapBox = styled(MapView)`
   width: ${Dimensions.get('window').width}px;
   height: ${Dimensions.get('window').height - 240}px;
   margin: ${Platform.OS === 'android'
-    ? (StatusBar.currentHeight || 0) + 0
-    : 0}px
+      ? (StatusBar.currentHeight || 0) + 0
+      : 0}px
     auto 0;
 `;
 
