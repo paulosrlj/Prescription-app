@@ -21,6 +21,8 @@ import { AuthProvider } from './src/context/Authentication/AuthProvider';
 import { MedicineProvider } from './src/context/MedicineSearch';
 import { IsDoctorProvider } from './src/context/DoctorLogin';
 
+import Upload from './src/components/Upload';
+
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
     Quicksand_400Regular,
@@ -44,5 +46,6 @@ export default function App(): JSX.Element {
         </IsModalActiveProvider>
       </IsDoctorProvider>
     </AuthProvider>
+    // <Upload />
   );
 }

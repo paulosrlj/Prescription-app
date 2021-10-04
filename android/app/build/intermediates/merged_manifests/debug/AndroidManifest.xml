@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- These require runtime permissions on M -->
@@ -62,6 +63,15 @@
             android:value="org.unimodules.adapters.react.apploader.RNHeadlessAppLoader" />
 
         <provider
+            android:name="com.imagepicker.ImagePickerProvider"
+            android:authorities="com.prescription.imagepickerprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/imagepicker_provider_paths" />
+        </provider>
+        <provider
             android:name="expo.modules.filesystem.FileSystemFileProvider"
             android:authorities="com.prescription.FileSystemFileProvider"
             android:exported="false"
@@ -69,7 +79,11 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_system_provider_paths" />
-        </provider> <!-- Needs to be explicitly declared on P+ -->
+        </provider>
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
@@ -82,10 +96,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:exported="false" />
     </application>
 
 </manifest>

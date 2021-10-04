@@ -2236,6 +2236,61 @@
   dependencies:
     nanoid "^3.1.23"
 
+"@rpldy/life-events@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/life-events/-/life-events-0.13.5.tgz#11329b09050380d6770daeca1bbefaee479010d2"
+  integrity sha512-3e1Z3a2ALqsPXhXlfKyNaRYV0AGHOtu9FdRRg5kb/OIDoGrR1l1iKZJr73ymvgWFtu31cECrwOLEk6WH2VFw9A==
+  dependencies:
+    "@rpldy/shared" "^0.13.5"
+    is-promise "^4.0.0"
+
+"@rpldy/native-uploady@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/native-uploady/-/native-uploady-0.13.5.tgz#3ba6683f987475511410596352c4763ed78a7a78"
+  integrity sha512-gxhaVxNGJ5mVlGy+itzh2YkJ9i716JDd2AQ7tznxGfKnW4S8O5rqPGQy+lpBUxwqL9uQ9OknCGTvlPHzbE65sQ==
+  dependencies:
+    "@rpldy/shared-ui" "^0.13.5"
+
+"@rpldy/sender@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/sender/-/sender-0.13.5.tgz#d6c780f12c92ef3f3ec8c57220b69fc2bcce7ae0"
+  integrity sha512-fpQHgqU9Jb2wLtF1wLEuBBxz0pEJSC64WAs05AgijE8o3UQOGHSds/Hi2NYd+i2V43/XCh1SdJuByonJIYPA4Q==
+  dependencies:
+    "@rpldy/shared" "^0.13.5"
+
+"@rpldy/shared-ui@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared-ui/-/shared-ui-0.13.5.tgz#0e4028ee9533074483bcf9bd2f50f1f139f54803"
+  integrity sha512-qtJo5QRHQaiqw1rsTR28EFiK708DIbzMu8HIlZYNHNlfbxBcwvWGuYVPn5fEbcVqn9cDfZTLANYjm24Wtv8YNA==
+  dependencies:
+    "@rpldy/shared" "^0.13.5"
+    "@rpldy/uploader" "^0.13.5"
+
+"@rpldy/shared@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/shared/-/shared-0.13.5.tgz#c1679d59e68cb5176e928ee69771707592e1e395"
+  integrity sha512-g71YyjL2T064uLZQuDV/up2w+jqaQ48HCPX5hXqwgix8f0o92YWmzy6MoLGCZmlfAsNEivbPFI9XZeAIImUJDA==
+  dependencies:
+    invariant "^2.2.4"
+    just-throttle "^1.1.0"
+
+"@rpldy/simple-state@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/simple-state/-/simple-state-0.13.5.tgz#9128aabb0875c0842b56a93ce21d4782895500fa"
+  integrity sha512-SsQArj6EKee8Y2Pjd/6DNqSjWrOK4v9AAHZcR44JfPXFWsjCOPBku09y8HzGpCKQKhhDzwDv4w5f8Gsamo/DTQ==
+  dependencies:
+    "@rpldy/shared" "^0.13.5"
+
+"@rpldy/uploader@^0.13.5":
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/@rpldy/uploader/-/uploader-0.13.5.tgz#23948f76a713fa3638209b7e4abe35469c4cfffa"
+  integrity sha512-TWFW8Dhu110yBn4WoJxLtGl9uepGZtLmr71CwlW6S1OMfnGA9rilYPnh0z9mZ97QrMzzWidH91Ktdtbhp3Q4NQ==
+  dependencies:
+    "@rpldy/life-events" "^0.13.5"
+    "@rpldy/sender" "^0.13.5"
+    "@rpldy/shared" "^0.13.5"
+    "@rpldy/simple-state" "^0.13.5"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -5603,6 +5658,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-promise@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-4.0.0.tgz#42ff9f84206c1991d26debf520dd5c01042dd2f3"
+  integrity sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==
+
 is-regex@^1.1.1, is-regex@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.4.tgz#eef5663cd59fa4c0ae339505323df6854bb15958"
@@ -6449,6 +6509,11 @@ jsprim@^1.2.2:
   dependencies:
     array-includes "^3.1.3"
     object.assign "^4.1.2"
+
+just-throttle@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/just-throttle/-/just-throttle-1.1.0.tgz#178d305ece9876a8a0759abd8d403aafcc6e4849"
+  integrity sha512-iePC/13XYX1Tyn9C6jY+DG3UEejkDvrKsw5xxgGhtGUwYWmoJm4CoKexscBKELOu3FTyCDzjr21ZJ67AXnz+bg==
 
 kind-of@^1.1.0:
   version "1.1.0"
@@ -7978,6 +8043,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-document-picker@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-document-picker/-/react-native-document-picker-6.1.1.tgz#5ae72d489ea6d04f8325802570b1e24fc2c30a66"
+  integrity sha512-WcmPR/z+8dlPRqMCd+LwFXv9S/Q1gihf2lj/X2BVRxqQzQ+UEGo9mXjxcYB7mWKDkAqYS1MjdBcbfDycmTSs/A==
+  dependencies:
+    invariant "^2.2.4"
+
 react-native-geolocation-service@^5.3.0-beta.3:
   version "5.3.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-5.3.0-beta.3.tgz#6afd291e886ecb5fdf8c096ea0a694ccb0975330"
@@ -7993,6 +8065,11 @@ react-native-gesture-handler@~1.10.2:
     hoist-non-react-statics "^3.3.0"
     invariant "^2.2.4"
     prop-types "^15.7.2"
+
+react-native-image-picker@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-4.1.1.tgz#f5b20c77b060e4a8cad4e76ae042e1e45b4743da"
+  integrity sha512-O78kljfaLQkFNzba4yWueqXlAWzDNzYUavqSQloJAf+ISGsOk95WO/a4Tp27E6hck8vPtx7u0GBrvEULyh1XAw==
 
 react-native-iphone-x-helper@^1.3.1:
   version "1.3.1"

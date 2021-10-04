@@ -18,41 +18,41 @@ const Text = styled.Text`
 
 export const Header = styled.SafeAreaView`
   width: 100%;
-  /* height: ${RFPercentage(42)}px; */
-  height: 170px;
+  height: ${RFPercentage(28)}px;
+  /* height: 170px; */
 
   /* background-color: ${({ theme }) => theme.colors.primary}; */
 
-  margin-bottom: 22px;
+  margin-bottom: ${RFPercentage(5)}px;
 `;
 
 export const PatientCard = styled.View`
   width: ${RFPercentage(52)}px;
   height: 100%;
-  margin: ${Platform.OS === 'android'
-    ? (StatusBar.currentHeight || 0) + 30
-    : 0}px
-    auto 0;
 
   border-radius: 5px;
 
   background-color: ${({ theme }) => theme.colors.secondary_blue};
+
+  /* margin: ${RFPercentage(5)}px auto; */
+  margin: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px auto;
 `;
 
 export const PatientCardName = styled(Text)`
   font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: ${RFValue(14)}px;
   width: 60%;
 
+  margin-top: ${RFPercentage(3)}px;
   margin-left: 19px;
-  margin-top: 15px;
 `;
 
 export const PatientCardCpf = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: 12px;
+  font-size: ${RFValue(14)}px;
   width: 60%;
 
-  margin-top: 20px;
+  margin-top: ${RFPercentage(2)}px;
   margin-left: 19px;
 
   color: ${({ theme }) => theme.colors.text};
@@ -62,7 +62,7 @@ export const Logo = styled.View`
   flex-direction: row;
   align-items: center;
   margin-left: 10px;
-  margin-top: 45px;
+  margin-top: ${RFPercentage(11)}px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)`
