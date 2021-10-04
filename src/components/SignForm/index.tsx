@@ -23,12 +23,12 @@ import { loginSchema } from '../../util/Validations';
 export default function SignForm(): JSX.Element {
   const { isDoctor, setIsDoctor } = useContext(Context);
 
-  const [cpf, setCpf] = useState('');
-  const [password, setPassword] = useState('');
+  // const [cpf, setCpf] = useState('');
+  // const [password, setPassword] = useState('');
 
   const { login, loginDoctor } = useAuthContext();
 
-  async function handleLogin() {
+  async function handleLogin(cpf: string, password: string) {
     try {
       if (isDoctor) await loginDoctor(cpf, password);
       else await login(cpf, password);
@@ -44,7 +44,7 @@ export default function SignForm(): JSX.Element {
         cpf: '',
         password: '',
       }}
-      onSubmit={values => console.log(values)}
+      onSubmit={({ cpf, password }) => handleLogin(cpf, password)}
     >
       {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
         <Form>
