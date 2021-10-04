@@ -34,3 +34,9 @@ export const ButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.medium};
 `;
+
+export const ValidationText = styled.Text`
+  color: ${({ theme }) => theme.colors.attention};
+  padding: 0 5px 5px 5px;
+  font-size: ${RFValue(15)}px;
+`;

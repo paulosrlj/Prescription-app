@@ -1,5 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { Formik } from 'formik';
+
+import { View, Text } from 'react-native';
 import Input from '../Input/index';
 import {
   InputContainer,
@@ -7,19 +10,21 @@ import {
   Button,
   ButtonText,
   Form,
+  ValidationText,
 } from './styles';
 
 import { Context } from '../../context/DoctorLogin';
 
 import { useAuthContext } from '../../context/Authentication/AuthProvider';
 
+// Validações
+import { loginSchema } from '../../util/Validations';
+
 export default function SignForm(): JSX.Element {
   const { isDoctor, setIsDoctor } = useContext(Context);
 
   const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
-
-  const navigation = useNavigation();
 
   const { login, loginDoctor } = useAuthContext();
 
@@ -33,23 +38,47 @@ export default function SignForm(): JSX.Element {
   }
 
   return (
-    <Form>
-      <InputContainer>
-        <FontAwesomeIcon name="user-alt" size={14} color="black" />
-        <Input onChangeText={setCpf} placeholder={isDoctor ? 'CRM' : 'CPF'} />
-      </InputContainer>
+    <Formik
+      validationSchema={loginSchema}
+      initialValues={{
+        cpf: '',
+        password: '',
+      }}
+      onSubmit={values => console.log(values)}
+    >
+      {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+        <Form>
+          {errors.cpf && <ValidationText>{errors.cpf}</ValidationText>}
+          <InputContainer>
+            <FontAwesomeIcon name="user-alt" size={14} color="black" />
+            <Input
+              maxLength={11}
+              keyboardType="numeric"
+              onChangeText={handleChange('cpf')}
+              onBlur={handleBlur('cpf')}
+              value={values.cpf}
+              placeholder={isDoctor ? 'CRM' : 'CPF'}
+            />
+          </InputContainer>
 
-      <InputContainer>
-        <FontAwesomeIcon name="key" size={14} color="black" />
-        <Input
-          onChangeText={setPassword}
-          placeholder="Senha"
-          secureTextEntry={true}
-        />
-      </InputContainer>
-      <Button onPress={() => handleLogin()}>
-        <ButtonText>Logar</ButtonText>
-      </Button>
-    </Form>
+          {errors.password && (
+            <ValidationText>{errors.password}</ValidationText>
+          )}
+          <InputContainer>
+            <FontAwesomeIcon name="key" size={14} color="black" />
+            <Input
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              placeholder="Senha"
+              secureTextEntry={true}
+            />
+          </InputContainer>
+          <Button onPress={() => handleSubmit()}>
+            <ButtonText>Logar</ButtonText>
+          </Button>
+        </Form>
+      )}
+    </Formik>
   );
 }
