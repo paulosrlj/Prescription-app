@@ -13,7 +13,7 @@ export default function Register({ navigation }: any): JSX.Element {
     <RegisterView>
       <RegisterForm
         paragraph={paragraph}
-        typeOfIdentification="CPF"
+        // typeOfIdentification="CPF"
         navigation={navigation}
       />
       <RegisterOptionView>

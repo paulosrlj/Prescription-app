@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { ScrollView } from 'react-native-gesture-handler';
 import Logo from '../../components/Logo/index';
 import SignForm from '../../components/SignForm';
 import {
@@ -16,33 +17,37 @@ export default function Login({ navigation }: any): JSX.Element {
   const { isDoctor, setIsDoctor } = useContext(Context);
 
   return (
-    <Container>
-      <Logo />
+    <ScrollView>
+      <Container>
+        <Logo />
 
-      <ContentView>
-        <Title>Bem vindo !</Title>
-        <LightParagraph>
-          Cadastre-se ou faça login para continuar
-        </LightParagraph>
-      </ContentView>
+        <ContentView>
+          <Title>Bem vindo !</Title>
+          <LightParagraph>
+            Cadastre-se ou faça login para continuar
+          </LightParagraph>
+        </ContentView>
 
-      <ContentView>
+        <ContentView>
+          <Paragraph>
+            Precisa renovar a receita do seus remédios periodicamente?
+          </Paragraph>
+          <Paragraph>O prescription vai resolver isso para você</Paragraph>
+        </ContentView>
+
+        <SignForm />
+
         <Paragraph>
-          Precisa renovar a receita do seus remédios periodicamente?
+          Não tem uma conta?{' '}
+          <Link onPress={() => navigation.navigate('Register')}>
+            Cadastre-se
+          </Link>
         </Paragraph>
-        <Paragraph>O prescription vai resolver isso para você</Paragraph>
-      </ContentView>
 
-      <SignForm />
-
-      <Paragraph>
-        Não tem uma conta?{' '}
-        <Link onPress={() => navigation.navigate('Register')}>Cadastre-se</Link>
-      </Paragraph>
-
-      <Paragraph onPress={() => setIsDoctor(!isDoctor)}>
-        {isDoctor ? 'É um paciente?' : 'É um médico?'} <Link>Logue aqui</Link>
-      </Paragraph>
-    </Container>
+        <Paragraph onPress={() => setIsDoctor(!isDoctor)}>
+          {isDoctor ? 'É um paciente?' : 'É um médico?'} <Link>Logue aqui</Link>
+        </Paragraph>
+      </Container>
+    </ScrollView>
   );
 }

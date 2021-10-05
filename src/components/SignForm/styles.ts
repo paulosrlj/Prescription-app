@@ -10,7 +10,7 @@ export const InputContainer = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 0px 15px;
+  margin: 0px 0px 20px;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.background_input};
@@ -33,4 +33,10 @@ export const ButtonText = styled.Text`
   font-size: ${RFValue(17)}px;
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.medium};
+`;
+
+export const ValidationText = styled.Text`
+  color: ${({ theme }) => theme.colors.attention};
+  padding: 0 5px 5px 5px;
+  font-size: ${RFValue(15)}px;
 `;

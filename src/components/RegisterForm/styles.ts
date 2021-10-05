@@ -69,3 +69,9 @@ export const BirtDateView = styled.View`
   color: ${({ theme }) => theme.colors.text_black};
   background-color: transparent;
 `;
+
+export const ValidationText = styled.Text`
+  color: ${({ theme }) => theme.colors.attention};
+  padding: 0 5px 5px 5px;
+  font-size: ${RFValue(15)}px;
+`;
