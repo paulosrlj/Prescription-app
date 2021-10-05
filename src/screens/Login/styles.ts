@@ -17,7 +17,7 @@ export const ContentView = styled.View`
   display: flex;
   align-items: center;
 
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 10px;
 `;
 
@@ -41,5 +41,6 @@ export const Paragraph = styled.Text`
 `;
 
 export const Link = styled.Text`
+  font-size: 12px;
   color: ${({ theme }) => theme.colors.primary};
 `;

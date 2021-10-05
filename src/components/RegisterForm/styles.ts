@@ -61,3 +61,11 @@ export const ButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.medium};
 `;
+
+export const BirtDateView = styled.View`
+  padding: 3px 3px;
+  min-height: ${RFValue(38)}px;
+  font-family: ${({ theme }) => theme.fonts.medium};
+  color: ${({ theme }) => theme.colors.text_black};
+  background-color: transparent;
+`;

@@ -4,15 +4,15 @@ import SignForm from '../../components/SignForm';
 import {
   Container,
   ContentView,
-  Link,
   LightParagraph,
+  Link,
   Paragraph,
   Title,
 } from './styles';
 
 import { Context } from '../../context/DoctorLogin';
 
-export default function Login(): JSX.Element {
+export default function Login({ navigation }: any): JSX.Element {
   const { isDoctor, setIsDoctor } = useContext(Context);
 
   return (
@@ -28,7 +28,7 @@ export default function Login(): JSX.Element {
 
       <ContentView>
         <Paragraph>
-          Precisa renovar a receita do seus remédios de tempo em tempo?
+          Precisa renovar a receita do seus remédios periodicamente?
         </Paragraph>
         <Paragraph>O prescription vai resolver isso para você</Paragraph>
       </ContentView>
@@ -36,7 +36,8 @@ export default function Login(): JSX.Element {
       <SignForm />
 
       <Paragraph>
-        Não tem uma conta? <Link>Cadatre-se</Link>
+        Não tem uma conta?{' '}
+        <Link onPress={() => navigation.navigate('Register')}>Cadastre-se</Link>
       </Paragraph>
 
       <Paragraph onPress={() => setIsDoctor(!isDoctor)}>
