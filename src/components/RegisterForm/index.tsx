@@ -61,9 +61,8 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
 
-    const result = `${day < 10 ? '0' : ''}${day}/${
-      month < 10 ? '0' : ''
-    }${month}/${year}`;
+    const result = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''
+      }${month}/${year}`;
 
     const resultForYup = date.toDateString();
 
@@ -90,7 +89,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
       email,
       password,
       phone,
-      birth_date: formateDate(birth_date, true),
+      birth_date: formateDate(birth_date, false),
     };
 
     const doctorsData = {
@@ -99,7 +98,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
       email,
       password,
       phone,
-      birth_date: formateDate(birth_date, true),
+      birth_date: formateDate(birth_date, false),
     };
 
     const data = isDoctor ? doctorsData : patientsData;
@@ -169,7 +168,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
               </InputContainer>
 
               <InputContainer>
-                <Pressable onPress={() => setShow(true)}>
+                <Pressable>
                   <FontAwesomeIcon name="calendar" size={14} color="black" />
                 </Pressable>
                 {/* <Input placeholder="patientsData de nascimento" onChangeText={setpatientsDataNasc} /> */}
@@ -182,9 +181,11 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
                     />
                   )}
                 </BirtDateView>
-                <LightParagraph>
-                  {formateDate(birth_date, false)}
-                </LightParagraph>
+                <Pressable onPress={() => setShow(true)}>
+                  <LightParagraph>
+                    {formateDate(birth_date, false)}
+                  </LightParagraph>
+                </Pressable>
               </InputContainer>
 
               {errors.email && <ValidationText>{errors.email}</ValidationText>}

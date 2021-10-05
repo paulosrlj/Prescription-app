@@ -6,7 +6,6 @@ import {
   DoctorName,
   DoctorCRM,
   DoctorLabel,
-  DoctorImg,
   HeaderGradient,
 } from './styles';
 
@@ -21,11 +20,6 @@ const Header = (): JSX.Element => {
           <DoctorCRM>{user?.crm}</DoctorCRM>
           <DoctorLabel>Médico</DoctorLabel>
         </DoctorInfo>
-        {/* <DoctorImg
-          source={{
-            uri: 'https://cdn-icons-png.flaticon.com/512/194/194938.png',
-          }}
-        /> */}
       </HeaderGradient>
     </Container>
   );

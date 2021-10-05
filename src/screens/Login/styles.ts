@@ -1,8 +1,12 @@
 import styled from 'styled-components/native';
+import { Dimensions, Platform, StatusBar } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
+  height: ${Dimensions.get('window').height}px;
   padding: 10px;
+  padding-bottom: 40px;
+  margin-top: ${Platform.OS === 'android' ? StatusBar.currentHeight || 0 : 0}px;
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
@@ -34,7 +38,7 @@ export const LightParagraph = styled.Text`
 `;
 
 export const Paragraph = styled.Text`
-  margin: 10px 0;
+  margin: 5px 0;
   font-size: 12px;
   color: ${({ theme }) => theme.colors.text_black};
   text-align: center;
