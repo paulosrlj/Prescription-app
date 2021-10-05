@@ -27,6 +27,17 @@ export default function Settings(): JSX.Element {
     await logout();
   }
 
+  const formateDate = (date: Date) => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    const result = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''
+      }${month}/${year}`;
+
+    return result;
+  };
+
   return (
     <Container>
       <Header>

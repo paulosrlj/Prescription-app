@@ -17,6 +17,12 @@ export default function Register({ navigation }: any): JSX.Element {
         navigation={navigation}
       />
       <RegisterOptionView>
+        <LightParagraph>
+          Já tem uma conta?{' '}
+          <Link onPress={() => navigation.navigate('Login')}>Entre</Link>
+        </LightParagraph>
+      </RegisterOptionView>
+      <RegisterOptionView>
         <LightParagraph onPress={() => setIsDoctor(!isDoctor)}>
           {isDoctor ? 'É um paciente?' : 'É um médico?'}{' '}
           <Link>Cadastre-se</Link>
