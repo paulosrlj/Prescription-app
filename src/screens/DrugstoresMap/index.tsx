@@ -10,6 +10,7 @@ import {
 } from './styles';
 
 import Logo from '../../components/Logo';
+import DrugstoreIcon from './drugstore.png';
 
 import api from '../../services/api';
 
@@ -80,8 +81,8 @@ const DrugstoresMap = (): JSX.Element => {
         provider={PROVIDER_GOOGLE}
         showsUserLocation
         initialRegion={{
-          latitude: -6.5205485,
-          longitude: -38.4155765,
+          latitude: -6.889707,
+          longitude: -38.561219,
           latitudeDelta: 0.008,
           longitudeDelta: 0.008,
         }}
@@ -89,8 +90,8 @@ const DrugstoresMap = (): JSX.Element => {
         {drugstores.map(drugstore => (
           <Marker
             key={drugstore.id}
-            // eslint-disable-next-line global-require
-            image={require('./pharmacy.png')}
+            image={DrugstoreIcon}
+            title={drugstore.name}
             coordinate={{
               latitude: parseFloat(drugstore.lat),
               longitude: parseFloat(drugstore.lng),

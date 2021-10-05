@@ -27,6 +27,7 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Del med"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Del med <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Skjul"</string>
+    <string name="ampm_description">Velg am/pm</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Slå på"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> fungerer ikke med mindre du slår på Google Play-tjenester."</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Slå på Google Play-tjenester"</string>
@@ -53,7 +54,17 @@
     <string name="crop_image_menu_flip_vertically">Vend loddrett</string>
     <string name="crop_image_menu_rotate_left">Roter teller med urviseren</string>
     <string name="crop_image_menu_rotate_right">Roter</string>
+    <string name="date_description">Velg dato</string>
+    <string name="day_description">Velg dag</string>
+    <string name="hour_description">Velg time</string>
+    <string name="hour_tag">Time</string>
+    <string name="minutes_description">Velg minutter</string>
+    <string name="minutes_tag">Minutter</string>
+    <string name="month_description">Velg måned</string>
+    <string name="overlay">Datovelger</string>
     <string name="pick_image_intent_chooser_title">Velg kilde</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Søk"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="time_tag">Tiden er</string>
+    <string name="year_description">Velg år</string>
 </resources>
