@@ -20,6 +20,7 @@ import { IsModalActiveProvider } from './src/context/Modal';
 import { AuthProvider } from './src/context/Authentication/AuthProvider';
 import { MedicineProvider } from './src/context/MedicineSearch';
 import { IsDoctorProvider } from './src/context/DoctorLogin';
+import Signup from './src/screens/Signup';
 
 export default function App(): JSX.Element {
   const [fontLoaded] = useFonts({
