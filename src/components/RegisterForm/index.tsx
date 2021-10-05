@@ -39,7 +39,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
 
-  const formateDate = (date: Date) => {
+  const formateDate = (date: Date, isForYup: boolean) => {
     const day = date.getDate();
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
@@ -48,7 +48,9 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
       month < 10 ? '0' : ''
     }${month}/${year}`;
 
-    return result;
+    const resultForYup = date.toDateString();
+
+    return isForYup ? resultForYup : result;
   };
 
   const onChange = (event: any, selectedDate: Date) => {
@@ -64,7 +66,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
       email,
       password,
       phone,
-      birth_date: formateDate(birth_date),
+      birth_date: formateDate(birth_date, true),
     };
 
     const doctorsData = {
@@ -73,7 +75,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
       email,
       password,
       phone,
-      birth_date: formateDate(birth_date),
+      birth_date: formateDate(birth_date, true),
     };
 
     const data = isDoctor ? doctorsData : patientsData;
@@ -124,7 +126,7 @@ export default function RegisterForm(props: IRegisterForm): JSX.Element {
               />
             )}
           </BirtDateView>
-          <LightParagraph>{formateDate(birth_date)}</LightParagraph>
+          <LightParagraph>{formateDate(birth_date, false)}</LightParagraph>
         </InputContainer>
 
         <InputContainer>
